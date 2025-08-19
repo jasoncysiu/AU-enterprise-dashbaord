@@ -1,448 +1,323 @@
 # app.py
-# ------------------------------------------------------------
-# Streamlit app: State → LHN → Facility (PUBLIC) + VIP overlay
-# - Google Sheets: local or uploaded service_account.json (no st.secrets)
-# - CSV uploads as fallback
-# - Preserves staff values (no aggregation)
-# - Simple table views (no collapsible grid)
-# - Record ID filter + mapping (Record ID ↔ Company Record ID)
-# - Download buttons
-#
-# Install:
-#   pip install streamlit pandas numpy gspread google-auth
-# Run:
-#   streamlit run app.py
-# ------------------------------------------------------------
-
-import json
-import os
-import re
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
 
-# ====== GOOGLE SHEETS CONFIG ======
-import gspread
-from google.oauth2.service_account import Credentials
-from google.oauth2 import service_account as sa_mod
+EXCEL_PATH = "Coverage_POC.xlsx"  # change if needed
 
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-DEFAULT_SHEET_ID = "1zX5r8SaqnNqOsQRxqSfB2tuRqoONQMhrtpHQUfVLwxs"   # <-- your Sheet ID
-DEFAULT_SA_PATH = "service_account.json"                              # local path to service account JSON
+# =========================================================
+# Data loading & preparation
+# =========================================================
+@st.cache_data
+def load_data(file_path: str):
+    # --- Load sheets
+    master_df = pd.read_excel(file_path, sheet_name='Masterlist')
+    vip_df = pd.read_excel(file_path, sheet_name='VIP')
+    deal_contact_df = pd.read_excel(file_path, sheet_name='Deal contact')  # not used directly now
+    deal_df = pd.read_excel(file_path, sheet_name='Deal')
 
+    # --- PUBLIC LHN only
+    lhn_df = master_df[
+        (master_df['Granularity'] == 'LHN') &
+        (master_df['Sector'].str.upper() == 'PUBLIC')
+    ].copy()
 
-def get_gspread_client_from_file(path: str):
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Service account file not found at: {path}")
-    creds = Credentials.from_service_account_file(path, scopes=SCOPES)
-    return gspread.authorize(creds)
+    # Helpers / cleaning
+    lhn_df['name_l'] = lhn_df['Name'].str.lower().str.strip()
+    lhn_df['Number of Staff'] = pd.to_numeric(
+        lhn_df.get('Number of clincial staff'), errors='coerce'
+    ).clip(lower=0)
 
+    # --- Deals prep
+    deal_df['assoc_comp_ids_list'] = deal_df['Associated Company IDs'].fillna('').astype(str).str.split(';')
+    deal_df['assoc_comp_name_l'] = deal_df['Associated Company Name'].str.lower().str.strip()
+    # keep key fields clean
+    for c in ['Deal Stage', 'Deal Name', 'Close Date', 'Deal owner', 'Amount', 'Potential Total Contract Value', 'State']:
+        if c not in deal_df.columns:
+            deal_df[c] = np.nan
 
-def get_gspread_client_from_uploaded_json(uploaded_file):
-    if uploaded_file is None:
-        raise RuntimeError("Please upload your service account JSON.")
-    info = json.loads(uploaded_file.getvalue().decode("utf-8"))
-    creds = sa_mod.Credentials.from_service_account_info(info, scopes=SCOPES)
-    return gspread.authorize(creds)
+    # Build reverse indexes -> deal rows
+    record_to_deals, name_to_deals = {}, {}
+    for i, r in deal_df.iterrows():
+        for comp_id in r['assoc_comp_ids_list']:
+            comp_id = comp_id.strip()
+            if comp_id:
+                record_to_deals.setdefault(comp_id, []).append(i)
+        nm = r['assoc_comp_name_l']
+        if pd.notna(nm):
+            name_to_deals.setdefault(nm, []).append(i)
 
+    def deal_indices_for_lhn(name_l: str, record_id):
+        out = []
+        if pd.notna(record_id):
+            rid = str(int(record_id)) if not isinstance(record_id, str) else record_id
+            out += record_to_deals.get(rid, [])
+        out += name_to_deals.get(name_l, [])
+        return sorted(set(out))
 
-@st.cache_data(show_spinner=True, ttl=600)
-def load_from_google_sheets(sheet_id: str, auth_method: str, sa_path: str = None, sa_uploaded=None):
-    """Load 'Masterlist' and 'VIP' worksheets as DataFrames."""
-    if auth_method == "Local service_account.json":
-        client = get_gspread_client_from_file(sa_path or DEFAULT_SA_PATH)
-    elif auth_method == "Upload service_account.json":
-        client = get_gspread_client_from_uploaded_json(sa_uploaded)
-    else:
-        raise ValueError("Unknown auth method.")
+    # --- VIP mapping (name & record id keys)
+    vip_df['org_name_l'] = vip_df['Org'].str.lower().str.strip()
+    vip_df['company_record_id'] = vip_df['Company Record ID'].astype(str)
+    vip_map = {}
+    for _, r in vip_df.iterrows():
+        if pd.notna(r['Name']):
+            vip_map.setdefault(r['org_name_l'], []).append(r['Name'])
+            vip_map.setdefault(r['company_record_id'], []).append(r['Name'])
 
-    sh = client.open_by_key(sheet_id)
+    # --- Build LHN rows + stage sets + deal index lists
+    rows, stage_map = [], {}
+    for _, l in lhn_df.iterrows():
+        name_l = l['name_l']
+        rid = l['Record ID']
+        state = l['State']
+        status = (str(l['Status']).strip() if pd.notna(l['Status']) else '')
 
-    # Masterlist
-    ws_master = sh.worksheet("Masterlist")
-    rows_master = ws_master.get_all_values()
-    if not rows_master:
-        raise RuntimeError("Masterlist sheet is empty.")
-    df_master = pd.DataFrame(rows_master[1:], columns=rows_master[0])
+        idxs = deal_indices_for_lhn(name_l, rid)
 
-    # VIP (optional)
-    try:
-        ws_vip = sh.worksheet("VIP")
-        rows_vip = ws_vip.get_all_values()
-        df_vip = pd.DataFrame(rows_vip[1:], columns=rows_vip[0]) if rows_vip else pd.DataFrame(
-            columns=['Org','State','Name','Company Record ID','Org_ID','Title','Organisation','Email','Owner','Note']
+        # VIPs
+        vip_set = set()
+        if name_l in vip_map: vip_set |= set(vip_map[name_l])
+        if pd.notna(rid):
+            rid_key = str(int(rid)) if not isinstance(rid, str) else str(rid)
+            vip_set |= set(vip_map.get(rid_key, []))
+
+        # Stages present for this LHN
+        stages = set(str(deal_df.loc[i, 'Deal Stage']) for i in idxs if pd.notna(deal_df.loc[i, 'Deal Stage']))
+        key = str(int(rid)) if pd.notna(rid) and not isinstance(rid, str) else str(rid)
+        stage_map[key] = stages
+
+        # Category from deal names
+        cat = 'Untouched'
+        if idxs:
+            cats = []
+            for i in idxs:
+                dname = str(deal_df.loc[i, 'Deal Name']).lower()
+                if '- h1' in dname: cats.append('H1')
+                elif '- h2' in dname: cats.append('H2')
+            if 'H1' in cats: cat = 'H1'
+            elif 'H2' in cats: cat = 'H2'
+            else: cat = 'Other'
+
+        # Any-touch (status, VIP, or any stage)
+        touched_any = (
+            (status != '' and status.lower() != 'untouched') or
+            bool(vip_set) or bool(stages)
         )
-    except gspread.WorksheetNotFound:
-        df_vip = pd.DataFrame(columns=['Org','State','Name','Company Record ID','Org_ID','Title','Organisation','Email','Owner','Note'])
 
-    return df_master, df_vip
+        rows.append({
+            'LHN Name': l['Name'],
+            'State': state,
+            'Record ID': rid,
+            'Category': cat,
+            'Touched_Any': touched_any,
+            'VIP Contacts': '; '.join(sorted(vip_set)),
+            'Number of Staff': l['Number of Staff'],
+            'Deal Indices': idxs,  # keep for later deal listing
+        })
+
+    results = pd.DataFrame(rows)
+
+    return results, deal_df, stage_map
 
 
-# ====== HIERARCHY + VIP UTILS ======
-def transform_hierarchy_preserve(df_in: pd.DataFrame, drop_empty_parents: bool = True) -> pd.DataFrame:
-    """
-    Build State → LHN → Facility hierarchy.
-    Preserve staff values exactly as in source (no aggregation).
-    """
-    df = df_in.copy()
+# =========================================================
+# App
+# =========================================================
+st.set_page_config(page_title="LHN Engagement Dashboard", layout="wide")
+st.title("Hospital LHN Engagement Dashboard")
 
-    # Normalize key columns
-    for col in ['Granularity', 'State', 'Name', 'Local Hospital Network (LHN)']:
-        if col not in df.columns:
-            df[col] = ""
-        df[col] = df[col].astype(str).str.strip()
+results_df, deal_df, lhn_stage_map = load_data(EXCEL_PATH)
 
-    g = df['Granularity'].str.casefold()
+# ---------------- Sidebar filters with "select all" + unit price + N ----------------
+st.sidebar.header("Filters")
 
-    # Include useful extra columns if present
-    bed_col = 'Number of bed (Actual)' if 'Number of bed (Actual)' in df.columns else ('# of bed (Actual)' if '# of bed (Actual)' in df.columns else None)
-    staff_col = 'Number of clincial staff' if 'Number of clincial staff' in df.columns else ('Number of clinical staff' if 'Number of clinical staff' in df.columns else None)
-    extras = ['Sector', 'Status', 'Notes', 'Org_ID', 'Record ID', 'AIHW Ref#', 'Provider Number']
-    extra_cols = [c for c in [bed_col, staff_col, *extras] if c and c in df.columns]
+states_all = sorted(results_df['State'].dropna().unique())
+stages_all = sorted({s for ss in lhn_stage_map.values() for s in ss})
 
-    # Preserve first-appearance order
-    state_order = df.loc[g.eq('state'), 'State'].drop_duplicates().tolist()
-    state_pos = {s: i for i, s in enumerate(state_order)}
+sel_all_states = st.sidebar.checkbox("Select all States", value=True)
+selected_states = st.sidebar.multiselect(
+    "States", states_all, default=states_all if sel_all_states else []
+)
+if sel_all_states and set(selected_states) != set(states_all):
+    selected_states = states_all
 
-    lhn_pos, seen_lhn = {}, {}
-    for _, r in df[g.eq('lhn')][['State', 'Name']].iterrows():
-        s, l = r['State'], r['Name']
-        if (s, l) not in lhn_pos:
-            seen_lhn.setdefault(s, 0)
-            lhn_pos[(s, l)] = seen_lhn[s]
-            seen_lhn[s] += 1
+sel_all_stages = st.sidebar.checkbox("Select all Deal Stages", value=True)
+selected_stages = st.sidebar.multiselect(
+    "Deal Stages (controls 'Touched by Stage' + Deal list)",
+    stages_all, default=stages_all if sel_all_stages else []
+)
+if sel_all_stages and set(selected_stages) != set(stages_all):
+    selected_stages = stages_all
 
-    fac_pos, seen_fac = {}, {}
-    for _, r in df[g.eq('facility')][['State', 'Local Hospital Network (LHN)', 'Name']].iterrows():
-        key = (r['State'], r['Local Hospital Network (LHN)'])
-        name = r['Name']
-        if (key[0], key[1], name) not in fac_pos:
-            seen_fac.setdefault(key, 0)
-            fac_pos[(key[0], key[1], name)] = seen_fac[key]
-            seen_fac[key] += 1
+st.sidebar.markdown("---")
+unit_price = st.sidebar.number_input("Unit price per staff (AUD)", min_value=0.0, value=1299.0, step=1.0)
+n_topbottom = st.sidebar.number_input("Top/Bottom N by (Staff × Unit Price)", 3, 50, 10, 1)
 
-    # Build layers (preserve provided values)
-    states = (
-        df[g.eq('state')]
-        .drop_duplicates(subset=['State'])
-        .assign(**{
-            'Local Hospital Network (LHN)': '',
-            'Hospital Name': '',
-            'Granularity': 'State'
-        })[['State', 'Local Hospital Network (LHN)', 'Hospital Name', 'Granularity'] + extra_cols]
+# ---------------- Filter rows by states ----------------
+filtered = results_df[results_df['State'].isin(selected_states)].copy()
+
+# ---------------- Correct touched-by-stage logic ----------------
+def touched_by_selected_stage(row) -> bool:
+    rid = row['Record ID']
+    key = str(int(rid)) if pd.notna(rid) and not isinstance(rid, str) else str(rid)
+    stages = lhn_stage_map.get(key, set())
+    return bool(stages.intersection(selected_stages)) if selected_stages else False
+
+filtered['Touched_By_Stage'] = filtered.apply(touched_by_selected_stage, axis=1)
+
+# Compute custom PTCV from sidebar price
+for df_ in (filtered,):
+    df_['Number of Staff'] = pd.to_numeric(df_['Number of Staff'], errors='coerce').clip(lower=0)
+    df_['PTCV_custom'] = df_['Number of Staff'].fillna(0) * unit_price
+
+# Split tables
+touched_tbl = filtered[filtered['Touched_By_Stage']].copy()
+untouched_tbl = filtered[~filtered['Touched_By_Stage']].copy()
+
+# =========================================================
+# Charts (computed AFTER filters so they reflect the view)
+# =========================================================
+# Coverage (any touch) for current states
+cov_any = filtered.groupby('State', as_index=False).agg(
+    Total=('LHN Name', 'count'),
+    Touched=('Touched_Any', 'sum')
+)
+cov_any['Coverage Rate'] = cov_any['Touched'] / cov_any['Total']
+
+# Coverage (by selected stages) for current states
+cov_stage = filtered.groupby('State', as_index=False).agg(
+    Total=('LHN Name', 'count'),
+    Touched=('Touched_By_Stage', 'sum')
+)
+cov_stage['Coverage Rate'] = cov_stage['Touched'] / cov_stage['Total']
+
+st.subheader("Coverage Rate by State (Any Touch)")
+fig_cov_any = px.bar(
+    cov_any.sort_values('Coverage Rate'),
+    x='Coverage Rate', y='State', orientation='h', title='Coverage (Any Touch)'
+)
+fig_cov_any.update_xaxes(range=[0, 1])
+fig_cov_any.update_traces(
+    text=cov_any.sort_values('Coverage Rate')['Coverage Rate'].map(lambda x: f"{x:.1%}"),
+    textposition='outside'
+)
+st.plotly_chart(fig_cov_any, use_container_width=True)
+
+
+# Grouped counts by category for current states
+st.subheader("LHNs by Category per State (Counts)")
+cat_df = filtered.pivot_table(
+    index='State', columns='Category', values='LHN Name', aggfunc='count', fill_value=0
+).reset_index()
+for c in ['H1','H2','Other','Untouched']:
+    if c not in cat_df: cat_df[c] = 0
+fig_grp = go.Figure()
+for c in ['H1','H2','Other','Untouched']:
+    fig_grp.add_bar(name=c, x=cat_df['State'], y=cat_df[c])
+fig_grp.update_layout(
+    barmode='group',
+    xaxis_title='State', yaxis_title='Number of LHNs',
+    title='LHNs by Category per State (Grouped Count)'
+)
+st.plotly_chart(fig_grp, use_container_width=True)
+
+# Top / Bottom N by staff × unit price
+st.subheader(f"Top LHNs by Potential Value (Staff × ${unit_price:,.0f})")
+ptcv_df = filtered[['LHN Name','State','Number of Staff','PTCV_custom']].copy()
+top_n = ptcv_df.sort_values('PTCV_custom', ascending=False).head(n_topbottom)
+fig_top = px.bar(
+    top_n.sort_values('PTCV_custom'),
+    x='PTCV_custom', y='LHN Name', orientation='h', color='State',
+    labels={'PTCV_custom':'Potential Value', 'LHN Name': 'LHN'}
+)
+fig_top.update_layout(xaxis_tickformat='$,.0f', title='Top N')
+fig_top.update_traces(text=top_n.sort_values('PTCV_custom')['PTCV_custom'].map(lambda v: f"${v:,.0f}"),
+                      textposition='outside')
+st.plotly_chart(fig_top, use_container_width=True)
+
+# =========================================================
+# Touched vs Untouched tables (by selected stages) with selection
+# =========================================================
+st.subheader("Touched and Untouched LHNs by Selected Stage (with Staff × Unit Price)")
+touched_tbl = touched_tbl[['LHN Name','State','Category','Number of Staff','PTCV_custom','Deal Indices']].sort_values(['State','LHN Name'])
+untouched_tbl = untouched_tbl[['LHN Name','State','Category','Number of Staff','PTCV_custom','Deal Indices']].sort_values(['State','LHN Name'])
+
+c1, c2 = st.columns(2)
+with c1:
+    st.markdown("**Touched LHNs**")
+    sel_all_touched = st.checkbox("Select all touched (below)", value=False, key="sel_all_touched")
+    t_view = touched_tbl.drop(columns=['Deal Indices']).copy()
+    t_view.insert(0, "Pick", sel_all_touched)
+    touched_out = st.data_editor(
+        t_view, hide_index=True, use_container_width=True,
+        disabled=['State','Category','Number of Staff','PTCV_custom','LHN Name'],
+        column_config={"Pick": st.column_config.CheckboxColumn(required=False)},
+        key="touched_editor"
     )
 
-    lhns = (
-        df[g.eq('lhn')][['State', 'Name'] + [c for c in extra_cols if c in df.columns]].drop_duplicates()
-        .rename(columns={'Name': 'Local Hospital Network (LHN)'})
-        .assign(**{
-            'Hospital Name': '',
-            'Granularity': 'LHN'
-        })[['State', 'Local Hospital Network (LHN)', 'Hospital Name', 'Granularity'] + extra_cols]
+with c2:
+    st.markdown("**Untouched LHNs**")
+    sel_all_untouched = st.checkbox("Select all untouched (below)", value=False, key="sel_all_untouched")
+    u_view = untouched_tbl.drop(columns=['Deal Indices']).copy()
+    u_view.insert(0, "Pick", sel_all_untouched)
+    untouched_out = st.data_editor(
+        u_view, hide_index=True, use_container_width=True,
+        disabled=['State','Category','Number of Staff','PTCV_custom','LHN Name'],
+        column_config={"Pick": st.column_config.CheckboxColumn(required=False)},
+        key="untouched_editor"
     )
 
-    facilities = (
-        df[g.eq('facility')]
-        .rename(columns={'Name': 'Hospital Name'})
-        [['State', 'Local Hospital Network (LHN)', 'Hospital Name', 'Granularity'] + extra_cols]
-        .assign(Granularity='Facility')
-    )
+picked_lhns = []
+if 'Pick' in touched_out:
+    picked_lhns += touched_out.loc[touched_out['Pick'], 'LHN Name'].tolist()
+if 'Pick' in untouched_out:
+    picked_lhns += untouched_out.loc[untouched_out['Pick'], 'LHN Name'].tolist()
+picked_lhns = sorted(set(picked_lhns))
 
-    # Optionally drop parents with no children beneath
-    if drop_empty_parents:
-        if not facilities.empty:
-            valid_lhns = set(map(tuple, facilities[['State', 'Local Hospital Network (LHN)']].drop_duplicates().to_numpy()))
-            lhns = lhns[lhns.apply(lambda r: (r['State'], r['Local Hospital Network (LHN)']) in valid_lhns, axis=1)]
-        valid_states = set(lhns['State']).union(set(facilities['State']))
-        states = states[states['State'].isin(valid_states)]
+colA, colB = st.columns([1,1])
+with colA:
+    if st.button("Use ALL currently Touched (left table)"):
+        picked_lhns = touched_tbl['LHN Name'].tolist()
+with colB:
+    if st.button("Clear selection"):
+        picked_lhns = []
 
-    out = pd.concat([states, lhns, facilities], ignore_index=True)
+# =========================================================
+# VIP + Deal list for selected LHNs
+# =========================================================
+st.subheader("VIP Contacts & Deals for Selected LHNs")
+if len(picked_lhns) == 0:
+    st.info("Pick LHNs using the checkboxes above, or click **Use ALL currently Touched**.")
+else:
+    # VIPs
+    vip_view = filtered[filtered['LHN Name'].isin(picked_lhns)][['LHN Name','State','VIP Contacts']]
+    st.markdown("**VIP Contacts**")
+    st.dataframe(vip_view.sort_values(['State','LHN Name']).reset_index(drop=True), use_container_width=True)
 
-    # Sort hierarchical order
-    def sort_key(r):
-        s, l, h, g_ = r['State'], r['Local Hospital Network (LHN)'], r['Hospital Name'], r['Granularity'].casefold()
-        s_idx = state_pos.get(s, 10**9)
-        if g_ == 'state':
-            return (s_idx, -1, -1)
-        elif g_ == 'lhn':
-            return (s_idx, lhn_pos.get((s, l), 10**9), -1)
-        else:
-            return (s_idx, lhn_pos.get((s, l), 10**9), fac_pos.get((s, l, h), 10**9))
+    # Deal list (respect selected stages)
+    st.markdown("**Deals**")
+    # Gather all deal indices for the selected LHNs
+    selected_rows = filtered[filtered['LHN Name'].isin(picked_lhns)]
+    all_indices = []
+    for _, r in selected_rows.iterrows():
+        all_indices += r['Deal Indices']
+    all_indices = sorted(set(all_indices))
 
-    out['_k'] = out.apply(sort_key, axis=1)
-    out = out.sort_values('_k').drop(columns=['_k']).reset_index(drop=True)
-    return out
-
-
-def format_for_display(df_hier: pd.DataFrame) -> pd.DataFrame:
-    """Flat table with parents blanked for readability."""
-    df = df_hier.copy()
-    df['State (display)'] = df['State']
-    df['LHN (display)'] = df['Local Hospital Network (LHN)']
-    df['Hospital (display)'] = df['Hospital Name']
-
-    df.loc[df['Granularity'] != 'State', 'State (display)'] = ''
-    df.loc[df['Granularity'] == 'Facility', 'LHN (display)'] = ''
-    df.loc[df['Granularity'] != 'Facility', 'Hospital (display)'] = ''
-
-    preferred = [
-        'State (display)', 'LHN (display)', 'Hospital (display)',
-        'Granularity', 'Sector',
-        'Number of bed (Actual)', '# of bed (Actual)',
-        'Number of clincial staff', 'Number of clinical staff',
-        'Status', 'Notes', 'Org_ID', 'Record ID', 'Provider Number', 'AIHW Ref#', 'VIP'
-    ]
-    cols_front = [c for c in preferred if c in df.columns]
-    cols_other = [c for c in df.columns if c not in cols_front + ['State', 'Local Hospital Network (LHN)', 'Hospital Name']]
-    df = df[cols_front + cols_other].rename(columns={
-        'State (display)': 'State',
-        'LHN (display)': 'Local Hospital Network (LHN)',
-        'Hospital (display)': 'Hospital Name'
-    })
-    return df
-
-
-def hierarchy_as_indented_labels(df_hier: pd.DataFrame) -> pd.DataFrame:
-    """One 'Label' column with ASCII indentation for a clean human-readable tree."""
-    level = df_hier['Granularity'].str.lower()
-    label = (df_hier['State'].where(level.eq('state'))
-             .fillna(df_hier['Local Hospital Network (LHN)'].where(level.eq('lhn')))
-             .fillna(df_hier['Hospital Name'].where(level.eq('facility'))))
-    indent = np.where(level.eq('state'), '',
-              np.where(level.eq('lhn'), '   └─ ',
-              '      └─ '))
-    out = pd.DataFrame({'Label': indent + label})
-    # Bring along useful columns
-    for c in ['Granularity','Sector','Number of bed (Actual)','# of bed (Actual)',
-              'Number of clincial staff','Number of clinical staff','Status','Notes',
-              'Org_ID','Record ID','Provider Number','AIHW Ref#','VIP']:
-        if c in df_hier.columns:
-            out[c] = df_hier[c]
-    return out
-
-
-def build_vip_flag(df_hier: pd.DataFrame, df_vip: pd.DataFrame, prefer_record_id: bool = True) -> pd.DataFrame:
-    """
-    Mark VIP rows. If prefer_record_id=True, mark VIPs primarily by Record ID match:
-      df_hier['Record ID'] == df_vip['Company Record ID'].
-    Falls back to Org_ID and name-based matches.
-    """
-    out = df_hier.copy()
-
-    def _norm(s): return s.astype(str).str.strip()
-
-    for c in ['Org_ID', 'State', 'Local Hospital Network (LHN)', 'Hospital Name', 'Record ID']:
-        if c in out.columns:
-            out[c] = _norm(out[c])
-
-    for c in ['Org_ID','State','Name','Organisation','Org','Company Record ID']:
-        if c in df_vip.columns:
-            df_vip[c] = _norm(df_vip[c])
-
-    if 'VIP' not in out.columns:
-        out['VIP'] = False
-
-    # 0) Preferred: Record ID ↔ Company Record ID
-    if prefer_record_id and ('Record ID' in out.columns) and ('Company Record ID' in df_vip.columns):
-        vip_rids = set(df_vip['Company Record ID'].dropna())
-        out.loc[out['Record ID'].isin(vip_rids), 'VIP'] = True
-
-    # 1) Org_ID
-    if 'Org_ID' in out.columns and 'Org_ID' in df_vip.columns:
-        vip_orgs = set(df_vip['Org_ID'].dropna())
-        out.loc[out['Org_ID'].isin(vip_orgs), 'VIP'] = True
-
-    # 2) Name-based fallbacks
-    if 'Name' in df_vip.columns:
-        name_set = set(df_vip['Name'].dropna().str.casefold())
-        out.loc[out['Hospital Name'].str.casefold().isin(name_set), 'VIP'] = True
-    if 'Organisation' in df_vip.columns:
-        org_set = set(df_vip['Organisation'].dropna().str.casefold())
-        out.loc[out['Local Hospital Network (LHN)'].str.casefold().isin(org_set), 'VIP'] = True
-    if 'Org' in df_vip.columns:
-        org2_set = set(df_vip['Org'].dropna().str.casefold())
-        out.loc[out['Hospital Name'].str.casefold().isin(org2_set), 'VIP'] = True
-        out.loc[out['Local Hospital Network (LHN)'].str.casefold().isin(org2_set), 'VIP'] = True
-
-    # 3) Tighten by State if available
-    if 'State' in df_vip.columns:
-        vip_pairs = set(zip(df_vip['Name'].fillna('').str.casefold(),
-                            df_vip['State'].fillna('').str.upper()))
-        out_pairs = list(zip(out['Hospital Name'].fillna('').str.casefold(),
-                             out['State'].fillna('').str.upper()))
-        out.loc[[p in vip_pairs for p in out_pairs], 'VIP'] = True
-
-    return out
-
-
-def parse_record_id_input(text: str) -> list[str]:
-    """Parse pasted Record IDs (comma/newline/space separated)."""
-    if not text:
-        return []
-    tokens = re.split(r"[,\s]+", text.strip())
-    return [t for t in tokens if t]
-
-
-def build_record_id_mapping(df_master_public: pd.DataFrame, df_vip: pd.DataFrame) -> pd.DataFrame:
-    """
-    Join Masterlist ↔ VIP on Record ID ↔ Company Record ID.
-    Returns a tidy mapping table for inspection/export.
-    """
-    m = df_master_public.copy()
-    v = df_vip.copy()
-
-    for c in ['Record ID','Org_ID','State','Name','Local Hospital Network (LHN)','Granularity',
-              'Provider Number','AIHW Ref#','Status','Notes']:
-        if c in m.columns:
-            m[c] = m[c].astype(str).str.strip()
-
-    for c in ['Company Record ID','Org_ID','State','Name','Organisation','Owner','Email','Title','Note','Org']:
-        if c in v.columns:
-            v[c] = v[c].astype(str).str.strip()
-
-    left_cols = [
-        'Record ID','State','Local Hospital Network (LHN)','Name','Granularity',
-        'Org_ID','Provider Number','AIHW Ref#','Status','Notes'
-    ]
-    left_cols = [c for c in left_cols if c in m.columns]
-
-    right_cols = [
-        'Company Record ID','Org','Organisation','Name','State','Owner','Email','Title','Note','Org_ID'
-    ]
-    right_cols = [c for c in right_cols if c in v.columns]
-
-    map_df = m[left_cols].merge(
-        v[right_cols],
-        left_on='Record ID', right_on='Company Record ID',
-        how='left', suffixes=('', ' (VIP)')
-    )
-
-    # Helpful final ordering
-    preferred = [
-        'Record ID','Company Record ID',
-        'State','Local Hospital Network (LHN)','Name','Granularity',
-        'Org_ID','Org_ID (VIP)','Organisation','Org','Owner','Email','Title','Note',
-        'Provider Number','AIHW Ref#','Status','Notes'
-    ]
-    cols = [c for c in preferred if c in map_df.columns] + [c for c in map_df.columns if c not in preferred]
-    return map_df[cols]
-
-
-# ====== STREAMLIT UI (simple) ======
-st.set_page_config(page_title="Health Hierarchy + VIPs — Simple + Record ID filter", layout="wide")
-st.title("🏥 State → LHN → Facility (PUBLIC) + VIP overlay")
-
-# Sidebar: data source
-st.sidebar.subheader("Data source")
-source = st.sidebar.radio("Choose source", ["Google Sheets", "CSV upload"], index=0)
-
-df_master, df_vip = None, None
-
-if source == "Google Sheets":
-    sheet_id = st.sidebar.text_input("Google Sheet ID", value=DEFAULT_SHEET_ID, help="The long ID from your Sheet URL.")
-    auth_method = st.sidebar.radio("Auth method", ["Local service_account.json", "Upload service_account.json"], index=0)
-
-    if auth_method == "Local service_account.json":
-        sa_path = st.sidebar.text_input("Path to service_account.json", value=DEFAULT_SA_PATH)
-        try:
-            with st.spinner("Loading from Google Sheets..."):
-                df_master, df_vip = load_from_google_sheets(sheet_id, auth_method, sa_path=sa_path, sa_uploaded=None)
-            st.success(f"Loaded Masterlist ({len(df_master):,} rows) & VIP ({len(df_vip):,} rows).")
-        except Exception as e:
-            st.error(f"Google Sheets load failed: {e}")
-            st.stop()
+    if len(all_indices) == 0:
+        st.info("No deals found for the selected LHNs.")
     else:
-        sa_uploaded = st.sidebar.file_uploader("Upload service_account.json", type=["json"])
-        if sa_uploaded is None:
-            st.info("Upload your service account JSON to continue.")
-            st.stop()
-        try:
-            with st.spinner("Loading from Google Sheets..."):
-                df_master, df_vip = load_from_google_sheets(sheet_id, auth_method, sa_uploaded=sa_uploaded)
-            st.success(f"Loaded Masterlist ({len(df_master):,} rows) & VIP ({len(df_vip):,} rows).")
-        except Exception as e:
-            st.error(f"Google Sheets load failed: {e}")
-            st.stop()
-
-else:
-    st.sidebar.write("Upload your CSVs")
-    up_master = st.sidebar.file_uploader("Masterlist CSV", type=["csv"], key="master")
-    up_vip    = st.sidebar.file_uploader("VIP CSV (optional)", type=["csv"], key="vip")
-    if up_master is None:
-        st.info("Please upload the **Masterlist CSV** to continue.")
-        st.stop()
-    df_master = pd.read_csv(up_master)
-    df_vip = (pd.read_csv(up_vip) if up_vip is not None
-              else pd.DataFrame(columns=['Org','State','Name','Company Record ID','Org_ID','Title','Organisation','Email','Owner','Note']))
-    st.success(f"Loaded Masterlist ({len(df_master):,}) and VIP ({len(df_vip):,}).")
-
-# Filter to PUBLIC only
-if 'Sector' in df_master.columns:
-    df_master_public = df_master[df_master['Sector'].astype(str).str.strip().str.upper() == 'PUBLIC'].copy()
-else:
-    df_master_public = df_master.copy()
-
-# Build hierarchy (preserving staff values as-is)
-df_hier = transform_hierarchy_preserve(df_master_public, drop_empty_parents=True)
-
-# VIP overlay (prefer Record ID matches)
-df_hier = build_vip_flag(df_hier, df_vip, prefer_record_id=True)
-
-# ---- Record ID filter UI ----
-st.sidebar.subheader("Record ID filter")
-all_record_ids = sorted(df_hier['Record ID'].dropna().astype(str).unique()) if 'Record ID' in df_hier.columns else []
-sel_ids = st.sidebar.multiselect("Choose Record ID(s)", options=all_record_ids, default=[])
-
-paste_ids = st.sidebar.text_area("…or paste Record ID(s) (comma / space / newline separated)", value="")
-parsed_ids = parse_record_id_input(paste_ids)
-
-# Combine both sources
-selected_rids = set(sel_ids) | set(parsed_ids)
-
-# Apply Record ID filter (if any)
-if selected_rids and 'Record ID' in df_hier.columns:
-    df_hier_f = df_hier[df_hier['Record ID'].astype(str).isin(selected_rids)].copy()
-else:
-    df_hier_f = df_hier.copy()
-
-# Views toggle
-st.sidebar.subheader("View")
-view_style = st.sidebar.radio("Display as", ["Flat table (parents blanked)", "Indented 'Label' column"], index=0)
-vip_only   = st.sidebar.checkbox("Show VIPs only", value=False)
-
-# Format view
-if view_style == "Flat table (parents blanked)":
-    df_view = format_for_display(df_hier_f)
-else:
-    df_view = hierarchy_as_indented_labels(df_hier_f)
-
-if vip_only and 'VIP' in df_view.columns:
-    df_view_disp = df_view[df_view['VIP'] == True].copy()
-else:
-    df_view_disp = df_view.copy()
-
-# ---- Main table ----
-st.subheader("Hierarchy Table")
-st.dataframe(df_view_disp, use_container_width=True)
-
-# Download current view
-csv = df_view_disp.to_csv(index=False).encode('utf-8')
-st.download_button("⬇️ Download current view (CSV)", data=csv, file_name="hierarchy_view.csv", mime="text/csv")
-
-# ---- Record ID Mapping view ----
-st.subheader("Record ID Mapping (Masterlist ↔ VIP)")
-map_df = build_record_id_mapping(df_master_public, df_vip)
-
-# Filter mapping by selected rids too
-if selected_rids and 'Record ID' in map_df.columns:
-    map_df = map_df[map_df['Record ID'].astype(str).isin(selected_rids)]
-
-st.dataframe(map_df, use_container_width=True)
-
-# Download mapping
-csv_map = map_df.to_csv(index=False).encode('utf-8')
-st.download_button("⬇️ Download mapping (CSV)", data=csv_map, file_name="record_id_mapping.csv", mime="text/csv")
-
-# VIP source preview
-st.subheader("VIP List (source)")
-st.dataframe(df_vip if not df_vip.empty else pd.DataFrame({'Info': ['(No VIP rows loaded)']}))
+        deals_sel = deal_df.loc[all_indices].copy()
+        # Optional: filter by selected stages
+        if selected_stages:
+            deals_sel = deals_sel[deals_sel['Deal Stage'].isin(selected_stages)]
+        # Attach LHN mapping by best-effort (via Associated Company Name to our picked set)
+        # We’ll show the Associated Company Name as LHN-ish label
+        cols = ['Deal Name','Deal Stage','Close Date','Deal owner','Amount',
+                'Potential Total Contract Value','Associated Company Name','State']
+        cols = [c for c in cols if c in deals_sel.columns]
+        st.dataframe(
+            deals_sel[cols].sort_values(['Deal Stage','Close Date'], na_position='last').reset_index(drop=True),
+            use_container_width=True
+        )
