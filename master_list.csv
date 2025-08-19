@@ -1,0 +1,798 @@
+Org,State,Org_ID,Granularity,Source,AIHW Ref#,Local Hospital Network (LHN)
+ACT,ACT,S1,State,,,
+Australian Capital Territory,ACT,L2,LHN,,,
+QEII Family Centre,ACT,F3,Facility,AIHW,AIHW0693,Australian Capital Territory
+The Canberra Hospital,ACT,F4,Facility,AIHW,AIHW0864,Australian Capital Territory
+Calvary Public Hospital,ACT,F5,Facility,AIHW,AIHW0145,Australian Capital Territory
+University Of Canberra Hospital,ACT,F6,Facility,AIHW,AIHW1052,Australian Capital Territory
+NSW,NSW,S7,State,,,
+Albury Wodonga Health,NSW,L8,LHN,,,
+Albury Wodonga Health [Albury Campus],NSW,F9,Facility,AIHW,AIHW0009,Albury Wodonga Health
+Central Coast Local Health District,NSW,L10,LHN,,,
+Gosford Hospital,NSW,F11,Facility,AIHW,AIHW0331,Central Coast Local Health District
+Woy Woy Hospital,NSW,F12,Facility,AIHW,AIHW0999,Central Coast Local Health District
+Long Jetty Health Care Centre,NSW,F13,Facility,AIHW,AIHW0480,Central Coast Local Health District
+Wyong Hospital,NSW,F14,Facility,AIHW,AIHW1004,Central Coast Local Health District
+Far West Local Health District,NSW,L15,LHN,,,
+Balranald Multi Purpose Service,NSW,F16,Facility,AIHW,AIHW0042,Far West Local Health District
+Broken Hill Hospital,NSW,F17,Facility,AIHW,AIHW0107,Far West Local Health District
+Ivanhoe Hospital,NSW,F18,Facility,AIHW,AIHW0401,Far West Local Health District
+Tibooburra Hospital,NSW,F19,Facility,AIHW,AIHW0895,Far West Local Health District
+Wentworth Hospital,NSW,F20,Facility,AIHW,AIHW0958,Far West Local Health District
+Wilcannia Multi Purpose Service,NSW,F21,Facility,AIHW,AIHW0983,Far West Local Health District
+Menindee Health Service,NSW,F22,Facility,AIHW,AIHW0535,Far West Local Health District
+Hunter New England Local Health District,NSW,L23,LHN,,,
+Tomaree Hospital,NSW,F24,Facility,AIHW,AIHW0900,Hunter New England Local Health District
+Barraba Multi Purpose Service,NSW,F25,Facility,AIHW,AIHW0051,Hunter New England Local Health District
+Bingara Multi Purpose Service,NSW,F26,Facility,AIHW,AIHW0077,Hunter New England Local Health District
+Boggabri Multi Purpose Service,NSW,F27,Facility,AIHW,AIHW0084,Hunter New England Local Health District
+Muswellbrook Hospital,NSW,F28,Facility,AIHW,AIHW0593,Hunter New England Local Health District
+Denman Multi Purpose Service,NSW,F29,Facility,AIHW,AIHW0237,Hunter New England Local Health District
+Bulahdelah Hospital,NSW,F30,Facility,AIHW,AIHW0112,Hunter New England Local Health District
+Cessnock Hospital,NSW,F31,Facility,AIHW,AIHW0172,Hunter New England Local Health District
+Dungog Hospital,NSW,F32,Facility,AIHW,AIHW0255,Hunter New England Local Health District
+Glen Innes Hospital,NSW,F33,Facility,AIHW,AIHW0317,Hunter New England Local Health District
+Gloucester Hospital,NSW,F34,Facility,AIHW,AIHW0322,Hunter New England Local Health District
+Gunnedah Hospital,NSW,F35,Facility,AIHW,AIHW0350,Hunter New England Local Health District
+Guyra Multi Purpose Service,NSW,F36,Facility,AIHW,AIHW0351,Hunter New England Local Health District
+Inverell Hospital,NSW,F37,Facility,AIHW,AIHW0398,Hunter New England Local Health District
+Kurri Kurri Hospital,NSW,F38,Facility,AIHW,AIHW0449,Hunter New England Local Health District
+Manilla Hospital,NSW,F39,Facility,AIHW,AIHW0501,Hunter New England Local Health District
+Manning Hospital,NSW,F40,Facility,AIHW,AIHW0502,Hunter New England Local Health District
+Merriwa Multi Purpose Service,NSW,F41,Facility,AIHW,AIHW0542,Hunter New England Local Health District
+Moree Hospital,NSW,F42,Facility,AIHW,AIHW0567,Hunter New England Local Health District
+Narrabri Hospital,NSW,F43,Facility,AIHW,AIHW0601,Hunter New England Local Health District
+Calvary Mater Newcastle Hospital,NSW,F44,Facility,AIHW,AIHW0142,Hunter New England Local Health District
+Tenterfield Hospital,NSW,F45,Facility,AIHW,AIHW0855,Hunter New England Local Health District
+Quirindi Hospital,NSW,F46,Facility,AIHW,AIHW0701,Hunter New England Local Health District
+Scone Hospital,NSW,F47,Facility,AIHW,AIHW0750,Hunter New England Local Health District
+Singleton Hospital,NSW,F48,Facility,AIHW,AIHW0757,Hunter New England Local Health District
+Tamworth Hospital,NSW,F49,Facility,AIHW,AIHW0848,Hunter New England Local Health District
+Tingha Multi Purpose Service,NSW,F50,Facility,AIHW,AIHW0897,Hunter New England Local Health District
+Vegetable Creek Multi Purpose Service Emmaville,NSW,F51,Facility,AIHW,AIHW0924,Hunter New England Local Health District
+Walcha Multi Purpose Service,NSW,F52,Facility,AIHW,AIHW0940,Hunter New England Local Health District
+Warialda Multi Purpose Service,NSW,F53,Facility,AIHW,AIHW0947,Hunter New England Local Health District
+Wee Waa Hospital,NSW,F54,Facility,AIHW,AIHW0955,Hunter New England Local Health District
+Werris Creek Hospital,NSW,F55,Facility,AIHW,AIHW0961,Hunter New England Local Health District
+"Wilson Memorial Community Hospital, Murrurundi",NSW,F56,Facility,AIHW,AIHW0985,Hunter New England Local Health District
+Belmont Hospital,NSW,F57,Facility,AIHW,AIHW0066,Hunter New England Local Health District
+Wingham Hospital,NSW,F58,Facility,AIHW,AIHW0988,Hunter New England Local Health District
+Hunter New England Local Health District Mater Mental Health Service,NSW,F59,Facility,AIHW,AIHW0387,Hunter New England Local Health District
+Armidale Hospital,NSW,F60,Facility,AIHW,AIHW0022,Hunter New England Local Health District
+Maitland Hospital,NSW,F61,Facility,AIHW,AIHW0494,Hunter New England Local Health District
+John Hunter Hospital,NSW,F62,Facility,AIHW,AIHW0408,Hunter New England Local Health District
+Morisset Hospital,NSW,F63,Facility,AIHW,AIHW0568,Hunter New England Local Health District
+John Hunter Hospital Royal Newcastle Centre,NSW,F64,Facility,AIHW,AIHW0170,Hunter New England Local Health District
+Maitland Hospital (Nsw),NSW,F65,Facility,AIHW,AIHW0162,Hunter New England Local Health District
+Armidale Rural Referral Hospital,NSW,F66,Facility,AIHW,AIHW0088,Hunter New England Local Health District
+Illawarra Shoalhaven Local Health District,NSW,L67,LHN,,,
+Shellharbour Hospital,NSW,F68,Facility,AIHW,AIHW0753,Illawarra Shoalhaven Local Health District
+Bulli Hospital,NSW,F69,Facility,AIHW,AIHW0113,Illawarra Shoalhaven Local Health District
+Coledale Hospital,NSW,F70,Facility,AIHW,AIHW0193,Illawarra Shoalhaven Local Health District
+David Berry Hospital,NSW,F71,Facility,AIHW,AIHW0231,Illawarra Shoalhaven Local Health District
+Milton Ulladulla Hospital,NSW,F72,Facility,AIHW,AIHW0552,Illawarra Shoalhaven Local Health District
+Shoalhaven Hospital,NSW,F73,Facility,AIHW,AIHW0755,Illawarra Shoalhaven Local Health District
+Wollongong Hospital,NSW,F74,Facility,AIHW,AIHW0991,Illawarra Shoalhaven Local Health District
+Port Kembla Hospital,NSW,F75,Facility,AIHW,AIHW0681,Illawarra Shoalhaven Local Health District
+Illawarra Mental Health Services,NSW,F76,Facility,AIHW,AIHW0392,Illawarra Shoalhaven Local Health District
+Kiama Hospital,NSW,F77,Facility,AIHW,AIHW0433,Illawarra Shoalhaven Local Health District
+Justice Health & Forensic Mental Health,NSW,L78,LHN,,,
+Justice Health Services,NSW,F79,Facility,AIHW,AIHW0415,Justice Health & Forensic Mental Health
+Mid North Coast Local Health District,NSW,L80,LHN,,,
+Bellinger River District Hospital,NSW,F81,Facility,AIHW,AIHW0065,Mid North Coast Local Health District
+Coffs Harbour Hospital,NSW,F82,Facility,AIHW,AIHW0190,Mid North Coast Local Health District
+Dorrigo Multi Purpose Service,NSW,F83,Facility,AIHW,AIHW0249,Mid North Coast Local Health District
+Kempsey Hospital,NSW,F84,Facility,AIHW,AIHW0430,Mid North Coast Local Health District
+Macksville Hospital,NSW,F85,Facility,AIHW,AIHW0489,Mid North Coast Local Health District
+Wauchope Hospital,NSW,F86,Facility,AIHW,AIHW0953,Mid North Coast Local Health District
+Port Macquarie Hospital,NSW,F87,Facility,AIHW,AIHW0683,Mid North Coast Local Health District
+Murrumbidgee Local Health District,NSW,L88,LHN,,,
+Barham Hospital,NSW,F89,Facility,AIHW,AIHW0048,Murrumbidgee Local Health District
+Batlow/Adelong Multi Purpose Service,NSW,F90,Facility,AIHW,AIHW0056,Murrumbidgee Local Health District
+Berrigan Multi Purpose Service,NSW,F91,Facility,AIHW,AIHW0071,Murrumbidgee Local Health District
+Boorowa Multi Purpose Service,NSW,F92,Facility,AIHW,AIHW0089,Murrumbidgee Local Health District
+Cootamundra Hospital,NSW,F93,Facility,AIHW,AIHW0208,Murrumbidgee Local Health District
+Corowa Hospital,NSW,F94,Facility,AIHW,AIHW0210,Murrumbidgee Local Health District
+Culcairn Multi Purpose Service,NSW,F95,Facility,AIHW,AIHW0221,Murrumbidgee Local Health District
+Deniliquin Hospital,NSW,F96,Facility,AIHW,AIHW0236,Murrumbidgee Local Health District
+Finley Hospital,NSW,F97,Facility,AIHW,AIHW0293,Murrumbidgee Local Health District
+Griffith Hospital,NSW,F98,Facility,AIHW,AIHW0344,Murrumbidgee Local Health District
+Gundagai Hospital,NSW,F99,Facility,AIHW,AIHW0349,Murrumbidgee Local Health District
+Hay Hospital,NSW,F100,Facility,AIHW,AIHW0359,Murrumbidgee Local Health District
+Henty Multi Purpose Service,NSW,F101,Facility,AIHW,AIHW0367,Murrumbidgee Local Health District
+Hillston Hospital,NSW,F102,Facility,AIHW,AIHW0374,Murrumbidgee Local Health District
+Holbrook Hospital,NSW,F103,Facility,AIHW,AIHW0379,Murrumbidgee Local Health District
+Jerilderie Multi Purpose Service,NSW,F104,Facility,AIHW,AIHW0404,Murrumbidgee Local Health District
+Junee Multi Purpose Service,NSW,F105,Facility,AIHW,AIHW0414,Murrumbidgee Local Health District
+Coolamon Multi Purpose Service,NSW,F106,Facility,AIHW,AIHW0203,Murrumbidgee Local Health District
+Lake Cargelligo Multi Purpose Service,NSW,F107,Facility,AIHW,AIHW0458,Murrumbidgee Local Health District
+Leeton Hospital,NSW,F108,Facility,AIHW,AIHW0467,Murrumbidgee Local Health District
+Lockhart Hospital,NSW,F109,Facility,AIHW,AIHW0477,Murrumbidgee Local Health District
+Urana Multi Purpose Service,NSW,F110,Facility,AIHW,AIHW0921,Murrumbidgee Local Health District
+Mercy Care Hospital - Albury,NSW,F111,Facility,AIHW,AIHW0537,Murrumbidgee Local Health District
+Mercy Care Hospital - Young,NSW,F112,Facility,AIHW,AIHW0538,Murrumbidgee Local Health District
+Murrumburrah-Harden Hospital,NSW,F113,Facility,AIHW,AIHW0591,Murrumbidgee Local Health District
+Narrandera Hospital,NSW,F114,Facility,AIHW,AIHW0602,Murrumbidgee Local Health District
+Temora Hospital,NSW,F115,Facility,AIHW,AIHW0853,Murrumbidgee Local Health District
+Tocumwal Hospital,NSW,F116,Facility,AIHW,AIHW0898,Murrumbidgee Local Health District
+Tumbarumba Multi Purpose Service,NSW,F117,Facility,AIHW,AIHW0913,Murrumbidgee Local Health District
+Tumut Hospital,NSW,F118,Facility,AIHW,AIHW0915,Murrumbidgee Local Health District
+Wagga Wagga Hospital,NSW,F119,Facility,AIHW,AIHW0936,Murrumbidgee Local Health District
+Wyalong Hospital,NSW,F120,Facility,AIHW,AIHW1002,Murrumbidgee Local Health District
+Young Hospital,NSW,F121,Facility,AIHW,AIHW1011,Murrumbidgee Local Health District
+Nepean Blue Mountains Local Health District,NSW,L122,LHN,,,
+Blue Mountains Hospital,NSW,F123,Facility,AIHW,AIHW0082,Nepean Blue Mountains Local Health District
+Lithgow Hospital,NSW,F124,Facility,AIHW,AIHW0473,Nepean Blue Mountains Local Health District
+Nepean Hospital,NSW,F125,Facility,AIHW,AIHW0607,Nepean Blue Mountains Local Health District
+Portland Hospital,NSW,F126,Facility,AIHW,AIHW0687,Nepean Blue Mountains Local Health District
+Springwood Hospital,NSW,F127,Facility,AIHW,AIHW0778,Nepean Blue Mountains Local Health District
+Hawkesbury Hospital,NSW,F128,Facility,AIHW,AIHW0358,Nepean Blue Mountains Local Health District
+Wentworth Psychiatric Services,NSW,F129,Facility,AIHW,AIHW0959,Nepean Blue Mountains Local Health District
+"Tresillian Family Care Centre, Kingswood",NSW,F130,Facility,AIHW,AIHW0909,Nepean Blue Mountains Local Health District
+Northern Sydney Local Health District,NSW,L131,LHN,,,
+Neringah Hospital,NSW,F132,Facility,AIHW,AIHW0609,Northern Sydney Local Health District Local Health District
+Hornsby Ku-ring-gai Hospital,NSW,F133,Facility,AIHW,AIHW0385,Northern Sydney Local Health District Local Health District
+Royal North Shore Hospital,NSW,F134,Facility,AIHW,AIHW0735,Northern Sydney Local Health District Local Health District
+Ryde Hospital,NSW,F135,Facility,AIHW,AIHW0744,Northern Sydney Local Health District Local Health District
+Mona Vale Hospital,NSW,F136,Facility,AIHW,AIHW0559,Northern Sydney Local Health District Local Health District
+Greenwich Hospital,NSW,F137,Facility,AIHW,AIHW0342,Northern Sydney Local Health District Local Health District
+Royal Rehabilitation Hospital,NSW,F138,Facility,AIHW,AIHW0739,Northern Sydney Local Health District Local Health District
+Macquarie Hospital,NSW,F139,Facility,AIHW,AIHW0491,Northern Sydney Local Health District Local Health District
+Northern Beaches Hospital,NSW,F140,Facility,AIHW,AIHW0631,Northern Sydney Local Health District Local Health District
+Coral Tree Family Centre,NSW,F141,Facility,AIHW,AIHW0209,Northern Sydney Local Health District Local Health District
+Ballina Hospital,NSW,F142,Facility,AIHW,AIHW0040,Northern Sydney Local Health District Local Health District
+Bonalbo Hospital,NSW,F143,Facility,AIHW,AIHW0086,Northern Sydney Local Health District Local Health District
+Casino Hospital,NSW,F144,Facility,AIHW,AIHW0160,Northern Sydney Local Health District Local Health District
+Grafton Base Hospital,NSW,F145,Facility,AIHW,AIHW0338,Northern Sydney Local Health District Local Health District
+Kyogle Multi Purpose Service,NSW,F146,Facility,AIHW,AIHW0452,Northern Sydney Local Health District Local Health District
+Lismore Hospital,NSW,F147,Facility,AIHW,AIHW0472,Northern Sydney Local Health District Local Health District
+Riverlands Drug and Alcohol Centre,NSW,F148,Facility,AIHW,AIHW0714,Northern Sydney Local Health District Local Health District
+Maclean Hospital,NSW,F149,Facility,AIHW,AIHW0490,Northern Sydney Local Health District Local Health District
+Nimbin Multi Purpose Service,NSW,F150,Facility,AIHW,AIHW0615,Northern Sydney Local Health District Local Health District
+Murwillumbah Hospital,NSW,F151,Facility,AIHW,AIHW0592,Northern Sydney Local Health District Local Health District
+The Tweed Hospital,NSW,F152,Facility,AIHW,AIHW0887,Northern Sydney Local Health District Local Health District
+Byron Central Hospital,NSW,F153,Facility,AIHW,AIHW0120,Northern Sydney Local Health District Local Health District
+Urbenville Multi Purpose Service,NSW,F154,Facility,AIHW,AIHW0922,Northern Sydney Local Health District Local Health District
+Tresillian Family Care Centre - Wollstonecraft,NSW,F155,Facility,,,Northern Sydney Local Health District Local Health District
+Adolescent And Young Adult Hospice  (Ayah),NSW,F156,Facility,,,Northern Sydney Local Health District
+Tresillian Family Care Centre - Willoughby,NSW,F157,Facility,,,Northern Sydney Local Health District
+South Eastern Sydney Local Health District,NSW,L158,LHN,,,
+Royal Hospital for Women,NSW,F159,Facility,AIHW,AIHW0732,South Eastern Sydney Local Health District
+Prince of Wales Hospital,NSW,F160,Facility,AIHW,AIHW0689,South Eastern Sydney Local Health District
+St George Hospital NSW,NSW,F161,Facility,AIHW,AIHW0783,South Eastern Sydney Local Health District
+Sutherland Hospital,NSW,F162,Facility,AIHW,AIHW0836,South Eastern Sydney Local Health District
+Sydney Hospital / Sydney Eye Hospital,NSW,F163,Facility,AIHW,AIHW0843,South Eastern Sydney Local Health District
+Gower Wilson Multi Purpose Service,NSW,F164,Facility,AIHW,AIHW0337,South Eastern Sydney Local Health District
+Calvary Hospital,NSW,F165,Facility,AIHW,AIHW0140,South Eastern Sydney Local Health District
+War Memorial Hospital,NSW,F166,Facility,AIHW,AIHW0945,South Eastern Sydney Local Health District
+Sydney Dental Hospital,NSW,F167,Facility,AIHW,AIHW0842,South Eastern Sydney Local Health District
+Southern Sydney Local Health District,NSW,L168,LHN,,,
+Batemans Bay Hospital,NSW,F169,Facility,AIHW,AIHW0053,South Sydney Local Health District
+South East Regional Hospital,NSW,F170,Facility,AIHW,AIHW0763,South Sydney Local Health District
+Bombala Multi Purpose Service,NSW,F171,Facility,AIHW,AIHW0085,South Sydney Local Health District
+Braidwood Multi Purpose Service,NSW,F172,Facility,AIHW,AIHW0099,South Sydney Local Health District
+Cooma Hospital,NSW,F173,Facility,AIHW,AIHW0205,South Sydney Local Health District
+Crookwell Hospital,NSW,F174,Facility,AIHW,AIHW0218,South Sydney Local Health District
+Delegate Multi Purpose Service,NSW,F175,Facility,AIHW,AIHW0234,South Sydney Local Health District
+Goulburn Hospital,NSW,F176,Facility,AIHW,AIHW0332,South Sydney Local Health District
+Moruya Hospital,NSW,F177,Facility,AIHW,AIHW0570,South Sydney Local Health District
+Pambula Hospital,NSW,F178,Facility,AIHW,AIHW0657,South Sydney Local Health District
+Queanbeyan Hospital,NSW,F179,Facility,AIHW,AIHW0695,South Sydney Local Health District
+Bourke Street Health Service,NSW,F180,Facility,AIHW,AIHW0093,South Sydney Local Health District
+Yass Hospital,NSW,F181,Facility,AIHW,AIHW1008,South Sydney Local Health District
+Kenmore Hospital,NSW,F182,Facility,AIHW,AIHW0431,South Sydney Local Health District
+South Western Sydney Local Health District,NSW,L183,LHN,,,
+Bankstown Lidcombe Hospital,NSW,F184,Facility,AIHW,AIHW0044,South Western Sydney Local Health District
+Fairfield Hospital,NSW,F185,Facility,AIHW,AIHW0291,South Western Sydney Local Health District
+Karitane Mothercraft Society,NSW,F186,Facility,AIHW,AIHW0423,South Western Sydney Local Health District
+Liverpool Hospital,NSW,F187,Facility,AIHW,AIHW0476,South Western Sydney Local Health District
+Bowral Hospital,NSW,F188,Facility,AIHW,AIHW0095,South Western Sydney Local Health District
+Camden Hospital,NSW,F189,Facility,AIHW,AIHW0148,South Western Sydney Local Health District
+Campbelltown Hospital,NSW,F190,Facility,AIHW,AIHW0150,South Western Sydney Local Health District
+Braeside Hospital,NSW,F191,Facility,AIHW,AIHW0098,South Western Sydney Local Health District
+St Vincent's Health Australia,NSW,L192,LHN,,,
+St Joseph's Hospital,NSW,F193,Facility,AIHW,AIHW0805,St Vincent's Health Australia
+St Vincent’s Hospital [Darlinghurst],NSW,F194,Facility,AIHW,AIHW0810,St Vincent's Health Australia
+St Vincents Private Hospital [Lismore],NSW,F195,Facility,AIHW,AIHW5211,St Vincent's Health Australia
+Sacred Heart Hospice,NSW,F196,Facility,AIHW,AIHW0746,St Vincent's Health Australia
+Sydney Children's Hospitals Network,NSW,L197,LHN,,,
+The Children's Hospital at Westmead,NSW,F198,Facility,AIHW,AIHW0865,Sydney Children's Hospitals Network
+Sydney Children's Hospital,NSW,F199,Facility,AIHW,AIHW0840,Sydney Children's Hospitals Network
+Sydney Local Health District,NSW,L200,LHN,,,
+Balmain Hospital,NSW,F201,Facility,AIHW,AIHW0041,Sydney Local Health District
+Canterbury Hospital,NSW,F202,Facility,AIHW,AIHW0155,Sydney Local Health District
+Royal Prince Alfred Hospital,NSW,F203,Facility,AIHW,AIHW0737,Sydney Local Health District
+Concord Hospital,NSW,F204,Facility,AIHW,AIHW0198,Sydney Local Health District
+Tresillian Care Centres,NSW,F205,Facility,AIHW,AIHW0908,Sydney Local Health District
+Royal Prince Alfred Institute of Rheumatology & Orthopaedics,NSW,F206,Facility,AIHW,AIHW0738,Sydney Local Health District
+Thomas Walker Hospital,NSW,F207,Facility,AIHW,AIHW0893,Sydney Local Health District
+Tresillian Family Care Centre - Belmore,NSW,F208,Facility,,,Sydney Local Health District
+Western NSW Local Health District,NSW,L209,LHN,,,
+Bathurst Health Service,NSW,F210,Facility,AIHW,AIHW0054,Western NSW Local Health District
+Blayney Multi Purpose Service,NSW,F211,Facility,AIHW,AIHW0081,Western NSW Local Health District
+Bourke Multi Purpose Service,NSW,F212,Facility,AIHW,AIHW0092,Western NSW Local Health District
+Brewarrina Multi Purpose Service,NSW,F213,Facility,AIHW,AIHW0100,Western NSW Local Health District
+Canowindra Hospital,NSW,F214,Facility,AIHW,AIHW0154,Western NSW Local Health District
+Cobar Health Service,NSW,F215,Facility,AIHW,AIHW0187,Western NSW Local Health District
+Collarenebri Multi Purpose Service,NSW,F216,Facility,AIHW,AIHW0195,Western NSW Local Health District
+Coolah Multi Purpose Service,NSW,F217,Facility,AIHW,AIHW0202,Western NSW Local Health District
+Coonabarabran Health Service,NSW,F218,Facility,AIHW,AIHW0206,Western NSW Local Health District
+Baradine Multi Purpose Service,NSW,F219,Facility,AIHW,AIHW0045,Western NSW Local Health District
+Coonamble Multi Purpose Service,NSW,F220,Facility,AIHW,AIHW0207,Western NSW Local Health District
+Gulargambone Multi Purpose Service,NSW,F221,Facility,AIHW,AIHW0346,Western NSW Local Health District
+Cowra Health Service,NSW,F222,Facility,AIHW,AIHW0214,Western NSW Local Health District
+Dunedoo Multi Purpose Service,NSW,F223,Facility,AIHW,AIHW0254,Western NSW Local Health District
+Eugowra Multipurpose Service,NSW,F224,Facility,AIHW,AIHW0287,Western NSW Local Health District
+Lachlan Health Service - Forbes,NSW,F225,Facility,AIHW,AIHW0454,Western NSW Local Health District
+Gilgandra Multi Purpose Service,NSW,F226,Facility,AIHW,AIHW0311,Western NSW Local Health District
+Goodooga Health Service,NSW,F227,Facility,AIHW,AIHW0327,Western NSW Local Health District
+Grenfell Multi Purpose Service,NSW,F228,Facility,AIHW,AIHW0343,Western NSW Local Health District
+Gulgong Multi Purpose Service,NSW,F229,Facility,AIHW,AIHW0347,Western NSW Local Health District
+Molong Health Service,NSW,F230,Facility,AIHW,AIHW0558,Western NSW Local Health District
+Mudgee Health Service,NSW,F231,Facility,AIHW,AIHW0583,Western NSW Local Health District
+Narromine Health Service,NSW,F232,Facility,AIHW,AIHW0604,Western NSW Local Health District
+Nyngan Multi Purpose Service,NSW,F233,Facility,AIHW,AIHW0641,Western NSW Local Health District
+Oberon Multi Purpose Service,NSW,F234,Facility,AIHW,AIHW0643,Western NSW Local Health District
+Orange Health Service,NSW,F235,Facility,AIHW,AIHW0647,Western NSW Local Health District
+Lachlan Health Service - Parkes,NSW,F236,Facility,AIHW,AIHW0455,Western NSW Local Health District
+Peak Hill Multipurpose Service,NSW,F237,Facility,AIHW,AIHW0661,Western NSW Local Health District
+Rylstone Multi Purpose Service,NSW,F238,Facility,AIHW,AIHW0745,Western NSW Local Health District
+Tottenham Multipurpose Service,NSW,F239,Facility,AIHW,AIHW0905,Western NSW Local Health District
+Trangie Multi Purpose Service,NSW,F240,Facility,AIHW,AIHW0907,Western NSW Local Health District
+Tullamore Multi Purpose Health Service,NSW,F241,Facility,AIHW,AIHW0911,Western NSW Local Health District
+Walgett Multipurpose Service,NSW,F242,Facility,AIHW,AIHW0942,Western NSW Local Health District
+Warren Multi Purpose Service,NSW,F243,Facility,AIHW,AIHW0950,Western NSW Local Health District
+Wellington Health Service,NSW,F244,Facility,AIHW,AIHW0957,Western NSW Local Health District
+Trundle Multi Purpose Health Service,NSW,F245,Facility,AIHW,AIHW0910,Western NSW Local Health District
+Lourdes Hospital Dubbo,NSW,F246,Facility,AIHW,AIHW0483,Western NSW Local Health District
+Lightning Ridge Multi Purpose Service,NSW,F247,Facility,AIHW,AIHW0470,Western NSW Local Health District
+Dubbo Hospital,NSW,F248,Facility,AIHW,AIHW0251,Western NSW Local Health District
+Condobolin Health Service,NSW,F249,Facility,AIHW,AIHW0199,Western NSW Local Health District
+Vegetable Creek Multi Purpose Service Emmaville,NSW,F250,Facility,,AIHW0090,Western NSW Local Health District
+Dubbo Hospital,NSW,F251,Facility,,AIHW0191,Western NSW Local Health District
+Condobolin Health Service,NSW,F252,Facility,,AIHW0207,Western NSW Local Health District
+Western Sydney Local Health District,NSW,L253,LHN,,,
+Auburn Hospital,NSW,F254,Facility,AIHW,AIHW0027,Western Sydney Local Health District
+Blacktown Hospital,NSW,F255,Facility,AIHW,AIHW0079,Western Sydney Local Health District
+Westmead Hospital,NSW,F256,Facility,AIHW,AIHW0978,Western Sydney Local Health District
+Mount Druitt Hospital,NSW,F257,Facility,AIHW,AIHW0573,Western Sydney Local Health District
+Cumberland Hospital,NSW,F258,Facility,AIHW,AIHW0222,Western Sydney Local Health District
+NT,NT,S259,State,,,
+Central Australia (NT),NT,L260,LHN,,,
+Alice Springs Hospital,NT,F261,Facility,AIHW,AIHW0013,Central Australia (NT)
+Tennant Creek Hospital,NT,F262,Facility,AIHW,AIHW0854,Central Australia (NT)
+Top End (NT),NT,L263,LHN,,,
+Katherine Hospital,NT,F264,Facility,AIHW,AIHW0427,Top End (NT)
+Gove Hospital,NT,F265,Facility,AIHW,AIHW0336,Top End (NT)
+Royal Darwin Hospital,NT,F266,Facility,AIHW,AIHW0730,Top End (NT)
+Palmerston Regional Hospital,NT,F267,Facility,AIHW,AIHW0754,Top End (NT)
+QLD,QLD,S268,State,,,
+Cairns and Hinterland Hospital and Health Service,QLD,L269,LHN,,,
+Atherton Hospital,QLD,F270,Facility,AIHW,AIHW0025,Cairns and Hinterland Hospital and Health Service
+Babinda Hospital,QLD,F271,Facility,AIHW,AIHW0032,Cairns and Hinterland Hospital and Health Service
+Cairns Hospital,QLD,F272,Facility,AIHW,AIHW0129,Cairns and Hinterland Hospital and Health Service
+Gordonvale Hospital,QLD,F273,Facility,AIHW,AIHW0330,Cairns and Hinterland Hospital and Health Service
+Herberton Hospital,QLD,F274,Facility,AIHW,AIHW0368,Cairns and Hinterland Hospital and Health Service
+Innisfail Hospital,QLD,F275,Facility,AIHW,AIHW0397,Cairns and Hinterland Hospital and Health Service
+Mareeba Hospital,QLD,F276,Facility,AIHW,AIHW0506,Cairns and Hinterland Hospital and Health Service
+Mossman Hospital,QLD,F277,Facility,AIHW,AIHW0571,Cairns and Hinterland Hospital and Health Service
+Tully Hospital,QLD,F278,Facility,AIHW,AIHW0912,Cairns and Hinterland Hospital and Health Service
+Central Queensland Hospital and Health Service,QLD,L279,LHN,,,
+Baralaba Hospital,QLD,F280,Facility,AIHW,AIHW0046,Central Queensland Hospital and Health Service
+Biloela Hospital,QLD,F281,Facility,AIHW,AIHW0076,Central Queensland Hospital and Health Service
+Emerald Hospital,QLD,F282,Facility,AIHW,AIHW0270,Central Queensland Hospital and Health Service
+Gladstone Hospital,QLD,F283,Facility,AIHW,AIHW0315,Central Queensland Hospital and Health Service
+Mount Morgan Hospital,QLD,F284,Facility,AIHW,AIHW0578,Central Queensland Hospital and Health Service
+Rockhampton Hospital,QLD,F285,Facility,AIHW,AIHW0720,Central Queensland Hospital and Health Service
+Springsure Hospital,QLD,F286,Facility,AIHW,AIHW0777,Central Queensland Hospital and Health Service
+Theodore Hospital,QLD,F287,Facility,AIHW,AIHW0892,Central Queensland Hospital and Health Service
+Woorabinda Hospital,QLD,F288,Facility,AIHW,AIHW0998,Central Queensland Hospital and Health Service
+Capricorn Coast Hospital,QLD,F289,Facility,AIHW,AIHW0156,Central Queensland Hospital and Health Service
+Moura Hospital,QLD,F290,Facility,AIHW,AIHW0581,Central Queensland Hospital and Health Service
+Blackwater Hospital,QLD,F291,Facility,AIHW,AIHW0080,Central Queensland Hospital and Health Service
+Central West Hospital and Health Service,QLD,L292,LHN,,,
+Alpha Hospital,QLD,F293,Facility,AIHW,AIHW0015,Central West Hospital and Health Service
+Barcaldine Hospital,QLD,F294,Facility,AIHW,AIHW0047,Central West Hospital and Health Service
+Blackall Hospital,QLD,F295,Facility,AIHW,AIHW0078,Central West Hospital and Health Service
+Longreach Hospital,QLD,F296,Facility,AIHW,AIHW0481,Central West Hospital and Health Service
+Winton Hospital,QLD,F297,Facility,AIHW,AIHW0989,Central West Hospital and Health Service
+Children's Health Queensland,QLD,L298,LHN,,,
+Queensland Children’s Hospital,QLD,F299,Facility,AIHW,AIHW0698,Children's Health Queensland
+Ellen Barron Family Centre,QLD,F300,Facility,AIHW,AIHW0268,Children's Health Queensland
+Darling Downs Hospital and Health Service,QLD,L301,LHN,,,
+Cherbourg Hospital,QLD,F302,Facility,AIHW,AIHW0177,Darling Downs Hospital and Health Service
+Chinchilla Hospital,QLD,F303,Facility,AIHW,AIHW0181,Darling Downs Hospital and Health Service
+Dalby Hospital,QLD,F304,Facility,AIHW,AIHW0226,Darling Downs Hospital and Health Service
+Goondiwindi Hospital,QLD,F305,Facility,AIHW,AIHW0329,Darling Downs Hospital and Health Service
+Inglewood Hospital,QLD,F306,Facility,AIHW,AIHW0395,Darling Downs Hospital and Health Service
+Jandowae Hospital,QLD,F307,Facility,AIHW,AIHW0403,Darling Downs Hospital and Health Service
+Kingaroy Hospital,QLD,F308,Facility,AIHW,AIHW0438,Darling Downs Hospital and Health Service
+Miles Hospital,QLD,F309,Facility,AIHW,AIHW0549,Darling Downs Hospital and Health Service
+Millmerran Hospital,QLD,F310,Facility,AIHW,AIHW0551,Darling Downs Hospital and Health Service
+Murgon Hospital,QLD,F311,Facility,AIHW,AIHW0587,Darling Downs Hospital and Health Service
+Nanango Hospital,QLD,F312,Facility,AIHW,AIHW0597,Darling Downs Hospital and Health Service
+Oakey Hospital,QLD,F313,Facility,AIHW,AIHW0642,Darling Downs Hospital and Health Service
+Stanthorpe Hospital,QLD,F314,Facility,AIHW,AIHW0819,Darling Downs Hospital and Health Service
+Tara Hospital,QLD,F315,Facility,AIHW,AIHW0850,Darling Downs Hospital and Health Service
+Taroom Hospital,QLD,F316,Facility,AIHW,AIHW0851,Darling Downs Hospital and Health Service
+Texas Hospital,QLD,F317,Facility,AIHW,AIHW0857,Darling Downs Hospital and Health Service
+Toowoomba Hospital,QLD,F318,Facility,AIHW,AIHW0903,Darling Downs Hospital and Health Service
+Warwick Hospital,QLD,F319,Facility,AIHW,AIHW0952,Darling Downs Hospital and Health Service
+Wondai Hospital,QLD,F320,Facility,AIHW,AIHW0996,Darling Downs Hospital and Health Service
+Baillie Henderson Hospital,QLD,F321,Facility,AIHW,AIHW0033,Darling Downs Hospital and Health Service
+Gold Coast Hospital and Health Service,QLD,L322,LHN,,,
+Gold Coast Hospital and Health Service University Hospital,QLD,F323,Facility,AIHW,AIHW0325,Gold Coast Hospital and Health Service
+Robina Hospital,QLD,F324,Facility,AIHW,AIHW0716,Gold Coast Hospital and Health Service
+Mackay Hospital and Health Service,QLD,L325,LHN,,,
+Bowen Hospital,QLD,F326,Facility,AIHW,AIHW0094,Mackay Hospital and Health Service
+Collinsville Hospital,QLD,F327,Facility,AIHW,AIHW0197,Mackay Hospital and Health Service
+Mackay Hospital and Health Service Base Hospital,QLD,F328,Facility,AIHW,AIHW0486,Mackay Hospital and Health Service
+Proserpine Hospital,QLD,F329,Facility,AIHW,AIHW0692,Mackay Hospital and Health Service
+Sarina Hospital,QLD,F330,Facility,AIHW,AIHW0749,Mackay Hospital and Health Service
+Moranbah Hospital,QLD,F331,Facility,AIHW,AIHW0565,Mackay Hospital and Health Service
+Dysart Hospital,QLD,F332,Facility,AIHW,AIHW0256,Mackay Hospital and Health Service
+Clermont Hospital,QLD,F333,Facility,AIHW,AIHW0184,Mackay Hospital and Health Service
+Clermont Multi-Purpose Health Service,QLD,F334,Facility,AIHW,AIHW0541,Mackay Hospital and Health Service
+Metro North Hospital and Health Service,QLD,L335,LHN,,,
+Royal Brisbane & Women's Hospital,QLD,F336,Facility,AIHW,AIHW0728,Metro North Hospital and Health Service
+Kilcoy Hospital,QLD,F337,Facility,AIHW,AIHW0434,Metro North Hospital and Health Service
+Redcliffe Hospital,QLD,F338,Facility,AIHW,AIHW0706,Metro North Hospital and Health Service
+The Prince Charles Hospital,QLD,F339,Facility,AIHW,AIHW0879,Metro North Hospital and Health Service
+Caboolture Hospital,QLD,F340,Facility,AIHW,AIHW0121,Metro North Hospital and Health Service
+Surgical Treatment And Rehabilitation Service (Stars),QLD,F341,Facility,AIHW,AIHW1054,Metro North Hospital and Health Service
+Metro South Hospital and Health Service,QLD,L342,LHN,,,
+Beaudesert Hospital,QLD,F343,Facility,AIHW,AIHW0058,Metro South Hospital and Health Service
+Princess Alexandra Hospital,QLD,F344,Facility,AIHW,AIHW0691,Metro South Hospital and Health Service
+Queen Elizabeth II Jubilee Hospital,QLD,F345,Facility,AIHW,AIHW0697,Metro South Hospital and Health Service
+Redland Hospital,QLD,F346,Facility,AIHW,AIHW0707,Metro South Hospital and Health Service
+Logan Hospital,QLD,F347,Facility,AIHW,AIHW0479,Metro South Hospital and Health Service
+North West Hospital and Health Service,QLD,L348,LHN,,,
+Doomadgee Hospital,QLD,F349,Facility,AIHW,AIHW0248,North West Hospital and Health Service
+Cloncurry Hospital,QLD,F350,Facility,AIHW,AIHW0186,North West Hospital and Health Service
+Julia Creek Hospital,QLD,F351,Facility,AIHW,AIHW0413,North West Hospital and Health Service
+Mount Isa Base Hospital,QLD,F352,Facility,AIHW,AIHW0577,North West Hospital and Health Service
+Normanton Hospital,QLD,F353,Facility,AIHW,AIHW0618,North West Hospital and Health Service
+Mornington Island Hospital,QLD,F354,Facility,AIHW,AIHW0569,North West Hospital and Health Service
+Not applicable,QLD,L355,LHN,,,
+Mater Mothers' Hospital,QLD,F356,Facility,AIHW,AIHW0523,Not applicable
+Mater Adult Hospital,QLD,F357,Facility,AIHW,AIHW0514,Not applicable
+South West Hospital and Health Service,QLD,L358,LHN,,,
+Augathella Hospital,QLD,F359,Facility,AIHW,AIHW0028,South West Hospital and Health Service
+Charleville Hospital,QLD,F360,Facility,AIHW,AIHW0173,South West Hospital and Health Service
+Cunnamulla Hospital,QLD,F361,Facility,AIHW,AIHW0225,South West Hospital and Health Service
+Dirranbandi Hospital,QLD,F362,Facility,AIHW,AIHW0243,South West Hospital and Health Service
+Injune Hospital,QLD,F363,Facility,AIHW,AIHW0396,South West Hospital and Health Service
+Mitchell Hospital,QLD,F364,Facility,AIHW,AIHW0555,South West Hospital and Health Service
+Mungindi Hospital,QLD,F365,Facility,AIHW,AIHW0586,South West Hospital and Health Service
+Quilpie Hospital,QLD,F366,Facility,AIHW,AIHW0700,South West Hospital and Health Service
+Roma Hospital,QLD,F367,Facility,AIHW,AIHW0723,South West Hospital and Health Service
+St George Hospital Qld,QLD,F368,Facility,AIHW,AIHW0784,South West Hospital and Health Service
+Surat Hospital,QLD,F369,Facility,AIHW,AIHW0834,South West Hospital and Health Service
+Sunshine Coast Hospital and Health Service,QLD,L370,LHN,,,
+Maleny Hospital,QLD,F371,Facility,AIHW,AIHW0496,Sunshine Coast Hospital and Health Service
+Nambour General Hospital,QLD,F372,Facility,AIHW,AIHW0595,Sunshine Coast Hospital and Health Service
+Caloundra Hospital,QLD,F373,Facility,AIHW,AIHW0131,Sunshine Coast Hospital and Health Service
+Sunshine Coast Hospital and Health Service University Hospital,QLD,F374,Facility,AIHW,AIHW0831,Sunshine Coast Hospital and Health Service
+Gympie Hospital,QLD,F375,Facility,AIHW,AIHW0352,Sunshine Coast Hospital and Health Service
+Torres and Cape Hospital and Health Service,QLD,L376,LHN,,,
+Cooktown Hospital,QLD,F377,Facility,AIHW,AIHW0201,Torres and Cape Hospital and Health Service
+Thursday Island Hospital,QLD,F378,Facility,AIHW,AIHW0894,Torres and Cape Hospital and Health Service
+Bamaga Hospital,QLD,F379,Facility,AIHW,AIHW0043,Torres and Cape Hospital and Health Service
+Weipa Hospital,QLD,F380,Facility,AIHW,AIHW0956,Torres and Cape Hospital and Health Service
+Townsville Hospital and Health Service,QLD,L381,LHN,,,
+Ayr Hospital,QLD,F382,Facility,AIHW,AIHW0031,Townsville Hospital and Health Service
+Charters Towers Hospital,QLD,F383,Facility,AIHW,AIHW0174,Townsville Hospital and Health Service
+Home Hill Hospital,QLD,F384,Facility,AIHW,AIHW0383,Townsville Hospital and Health Service
+Hughenden Hospital,QLD,F385,Facility,AIHW,AIHW0386,Townsville Hospital and Health Service
+Ingham Hospital,QLD,F386,Facility,AIHW,AIHW0393,Townsville Hospital and Health Service
+Joyce Palmer Health Service,QLD,F387,Facility,AIHW,AIHW0412,Townsville Hospital and Health Service
+Richmond Hospital,QLD,F388,Facility,AIHW,AIHW0709,Townsville Hospital and Health Service
+The Townsville Hospital and Health Service Hospital,QLD,F389,Facility,AIHW,AIHW0886,Townsville Hospital and Health Service
+Charters Towers Rehabilitation Unit,QLD,F390,Facility,AIHW,AIHW0175,Townsville Hospital and Health Service
+Kirwan Rehabilitation Unit,QLD,F391,Facility,AIHW,AIHW0442,Townsville Hospital and Health Service
+West Moreton Hospital and Health Service,QLD,L392,LHN,,,
+Boonah Hospital,QLD,F393,Facility,AIHW,AIHW0088,West Moreton Hospital and Health Service
+Esk Hospital,QLD,F394,Facility,AIHW,AIHW0282,West Moreton Hospital and Health Service
+Ipswich Hospital,QLD,F395,Facility,AIHW,AIHW0400,West Moreton Hospital and Health Service
+Laidley Hospital,QLD,F396,Facility,AIHW,AIHW0457,West Moreton Hospital and Health Service
+Gatton Hospital,QLD,F397,Facility,AIHW,AIHW0306,West Moreton Hospital and Health Service
+The Park Centre For Mental Health,QLD,F398,Facility,AIHW,AIHW0877,West Moreton Hospital and Health Service
+Wide Bay Hospital and Health Service,QLD,L399,LHN,,,
+Biggenden Hospital,QLD,F400,Facility,AIHW,AIHW0075,Wide Bay Hospital and Health Service
+Bundaberg Base Hospital,QLD,F401,Facility,AIHW,AIHW0115,Wide Bay Hospital and Health Service
+Childers Hospital,QLD,F402,Facility,AIHW,AIHW0180,Wide Bay Hospital and Health Service
+Eidsvold Hospital,QLD,F403,Facility,AIHW,AIHW0267,Wide Bay Hospital and Health Service
+Gayndah Hospital,QLD,F404,Facility,AIHW,AIHW0308,Wide Bay Hospital and Health Service
+Gin Gin Hospital,QLD,F405,Facility,AIHW,AIHW0312,Wide Bay Hospital and Health Service
+Maryborough Hospital,QLD,F406,Facility,AIHW,AIHW0511,Wide Bay Hospital and Health Service
+Monto Hospital,QLD,F407,Facility,AIHW,AIHW0562,Wide Bay Hospital and Health Service
+Mundubbera Hospital,QLD,F408,Facility,AIHW,AIHW0585,Wide Bay Hospital and Health Service
+Hervey Bay Hospital,QLD,F409,Facility,AIHW,AIHW0369,Wide Bay Hospital and Health Service
+SA,SA,S410,State,,,
+Barossa Hills Fleurieu Local Health Network,SA,L411,LHN,,,
+Angaston District Hospital,SA,F412,Facility,AIHW,AIHW0019,Barossa Hills Fleurieu Local Health Network
+Flinders Medical Centre,SA,F413,Facility,AIHW,AIHW0297,Barossa Hills Fleurieu Local Health Network
+Glenside Campus,SA,F414,Facility,AIHW,AIHW0565,Barossa Hills Fleurieu Local Health Network
+Gumeracha District Soldiers' Memorial Hospital,SA,F415,Facility,AIHW,AIHW0348,Barossa Hills Fleurieu Local Health Network
+Kangaroo Island Health Service,SA,F416,Facility,AIHW,AIHW0420,Barossa Hills Fleurieu Local Health Network
+Kapunda Hospital,SA,F417,Facility,AIHW,AIHW0421,Barossa Hills Fleurieu Local Health Network
+Mount Barker District Soldiers' Memorial Hospital,SA,F418,Facility,AIHW,AIHW0572,Barossa Hills Fleurieu Local Health Network
+Mount Pleasant District Hospital,SA,F419,Facility,AIHW,AIHW0579,Barossa Hills Fleurieu Local Health Network
+Strathalbyn and District Health Service,SA,F420,Facility,AIHW,AIHW0823,Barossa Hills Fleurieu Local Health Network
+Tanunda War Memorial Hospital,SA,F421,Facility,AIHW,AIHW0849,Barossa Hills Fleurieu Local Health Network
+Central Adelaide Local Health Network,SA,L422,LHN,,,
+Hampstead Rehabilitation Centre,SA,F423,Facility,AIHW,AIHW0355,Central Adelaide Local Health Network
+Pregnancy Advisory Centre,SA,F424,Facility,AIHW,AIHW0688,Central Adelaide Local Health Network
+Royal Adelaide Hospital,SA,F425,Facility,AIHW,AIHW0727,Central Adelaide Local Health Network
+St Margaret's Hospital,SA,F426,Facility,AIHW,AIHW0807,Central Adelaide Local Health Network
+The Queen Elizabeth Hospital,SA,F427,Facility,AIHW,AIHW0880,Central Adelaide Local Health Network
+Glenside Health Services,SA,F428,Facility,AIHW,AIHW0321,Central Adelaide Local Health Network
+Eyre and Far North Local Health Network,SA,L429,LHN,,,
+Ceduna District Health Service,SA,F430,Facility,AIHW,AIHW0166,Eyre and Far North Local Health Network
+Coober Pedy Hospital and Health Service,SA,F431,Facility,AIHW,AIHW0200,Eyre and Far North Local Health Network
+Cowell District Hospital and Aged Care,SA,F432,Facility,AIHW,AIHW0213,Eyre and Far North Local Health Network
+Crystal Brook and District Hospital,SA,F433,Facility,AIHW,AIHW0220,Eyre and Far North Local Health Network
+Elliston Hospital,SA,F434,Facility,AIHW,AIHW0269,Eyre and Far North Local Health Network
+Eudunda Hospital,SA,F435,Facility,AIHW,AIHW0286,Eyre and Far North Local Health Network
+Kimba District Hospital and Aged Care,SA,F436,Facility,AIHW,AIHW0435,Eyre and Far North Local Health Network
+Port Lincoln Health Service,SA,F437,Facility,AIHW,AIHW0682,Eyre and Far North Local Health Network
+Streaky Bay Hospital,SA,F438,Facility,AIHW,AIHW0825,Eyre and Far North Local Health Network
+Tumby Bay Hospital and Health Services,SA,F439,Facility,AIHW,AIHW0914,Eyre and Far North Local Health Network
+Wudinna Hospital,SA,F440,Facility,AIHW,AIHW1000,Eyre and Far North Local Health Network
+Cleve District Hospital and Aged Care,SA,F441,Facility,AIHW,AIHW0185,Eyre and Far North Local Health Network
+Flinders and Upper North Local Health Network,SA,L442,LHN,,,
+Hawker Memorial Hospital,SA,F443,Facility,AIHW,AIHW0357,Flinders and Upper North Local Health Network
+Leigh Creek Health Service,SA,F444,Facility,AIHW,AIHW0468,Flinders and Upper North Local Health Network
+Port Augusta Hospital and Regional Health Services,SA,F445,Facility,AIHW,AIHW0679,Flinders and Upper North Local Health Network
+Quorn Health Service,SA,F446,Facility,AIHW,AIHW0702,Flinders and Upper North Local Health Network
+Roxby Downs Health Service,SA,F447,Facility,AIHW,AIHW0726,Flinders and Upper North Local Health Network
+Whyalla Hospital and Health Services,SA,F448,Facility,AIHW,AIHW0982,Flinders and Upper North Local Health Network
+Limestone Coast Local Health Network,SA,L449,LHN,,,
+Bordertown Memorial Hospital,SA,F450,Facility,AIHW,AIHW0091,Limestone Coast Local Health Network
+Kingston Soldiers' Memorial Hospital,SA,F451,Facility,AIHW,AIHW0440,Limestone Coast Local Health Network
+Millicent and Districts Hospital and Health Service,SA,F452,Facility,AIHW,AIHW0550,Limestone Coast Local Health Network
+Mount Gambier and Districts Health Service,SA,F453,Facility,AIHW,AIHW0574,Limestone Coast Local Health Network
+Naracoorte Health Service,SA,F454,Facility,AIHW,AIHW0599,Limestone Coast Local Health Network
+Penola War Memorial Hospital,SA,F455,Facility,AIHW,AIHW0667,Limestone Coast Local Health Network
+Northern Adelaide Local Health Network,SA,L456,LHN,,,
+Lyell McEwin Hospital,SA,F457,Facility,AIHW,AIHW0485,Northern Adelaide Local Health Network
+Modbury Hospital,SA,F458,Facility,AIHW,AIHW0556,Northern Adelaide Local Health Network
+Riverland Mallee Coorong Local Health Network,SA,L459,LHN,,,
+Barmera Health Service,SA,F460,Facility,AIHW,AIHW0050,Riverland Mallee Coorong Local Health Network
+Karoonda and District Soldiers' Memorial Hospital,SA,F461,Facility,AIHW,AIHW0424,Riverland Mallee Coorong Local Health Network
+Lameroo District Health Service,SA,F462,Facility,AIHW,AIHW0461,Riverland Mallee Coorong Local Health Network
+Loxton Hospital Complex,SA,F463,Facility,AIHW,AIHW0484,Riverland Mallee Coorong Local Health Network
+Mannum District Hospital,SA,F464,Facility,AIHW,AIHW0504,Riverland Mallee Coorong Local Health Network
+Meningie and Districts Memorial Hospital and Health Services,SA,F465,Facility,AIHW,AIHW0536,Riverland Mallee Coorong Local Health Network
+Murray Bridge Soldiers' Memorial Hospital,SA,F466,Facility,AIHW,AIHW0588,Riverland Mallee Coorong Local Health Network
+Pinnaroo Soldiers' Memorial Hospital,SA,F467,Facility,AIHW,AIHW0677,Riverland Mallee Coorong Local Health Network
+Renmark Paringa District Hospital,SA,F468,Facility,AIHW,AIHW0708,Riverland Mallee Coorong Local Health Network
+Riverland General Hospital,SA,F469,Facility,AIHW,AIHW0713,Riverland Mallee Coorong Local Health Network
+Tailem Bend District Hospital,SA,F470,Facility,AIHW,AIHW0845,Riverland Mallee Coorong Local Health Network
+Waikerie Health Service,SA,F471,Facility,AIHW,AIHW0938,Riverland Mallee Coorong Local Health Network
+Southern Adelaide Local Health Network,SA,L472,LHN,,,
+Gawler Health Service,SA,F473,Facility,AIHW,AIHW0307,Southern Adelaide Local Health Network
+McLaren Vale & Districts War Memorial Hospital Inc,SA,F474,Facility,AIHW,AIHW0529,Southern Adelaide Local Health Network
+Noarlunga Hospital,SA,F475,Facility,AIHW,AIHW0616,Southern Adelaide Local Health Network
+South Coast District Hospital,SA,F476,Facility,AIHW,AIHW0762,Southern Adelaide Local Health Network
+Women's and Children's Health Network (SA),SA,L477,LHN,,,
+Women's and Children's Hospital,SA,F478,Facility,AIHW,AIHW0994,Women's and Children's Health Network (SA)
+Yorke and Northern Local Health Network,SA,L479,LHN,,,
+Balaklava Soldiers' Memorial District Hospital,SA,F480,Facility,AIHW,AIHW0035,Yorke and Northern Local Health Network
+Booleroo Centre District Hospital and Health Services,SA,F481,Facility,AIHW,AIHW0087,Yorke and Northern Local Health Network
+Burra Hospital,SA,F482,Facility,AIHW,AIHW0118,Yorke and Northern Local Health Network
+Central Yorke Peninsula Hospital (Maitland),SA,F483,Facility,AIHW,AIHW0170,Yorke and Northern Local Health Network
+Clare Hospital,SA,F484,Facility,AIHW,AIHW0183,Yorke and Northern Local Health Network
+Cummins and District Memorial Hospital,SA,F485,Facility,AIHW,AIHW0223,Yorke and Northern Local Health Network
+Jamestown Hospital and Health Service,SA,F486,Facility,AIHW,AIHW0402,Yorke and Northern Local Health Network
+Laura and District Hospital,SA,F487,Facility,AIHW,AIHW0464,Yorke and Northern Local Health Network
+Northern Yorke Peninsula Health Service (Wallaroo),SA,F488,Facility,AIHW,AIHW0632,Yorke and Northern Local Health Network
+Orroroo and District Health Service,SA,F489,Facility,AIHW,AIHW0650,Yorke and Northern Local Health Network
+Peterborough Soldiers' Memorial Hospital,SA,F490,Facility,AIHW,AIHW0672,Yorke and Northern Local Health Network
+Port Broughton and District Hospital and Health Service,SA,F491,Facility,AIHW,AIHW0680,Yorke and Northern Local Health Network
+Port Pirie Regional Health Service,SA,F492,Facility,AIHW,AIHW0685,Yorke and Northern Local Health Network
+Riverton District Soldiers' Memorial Hospital,SA,F493,Facility,AIHW,AIHW0715,Yorke and Northern Local Health Network
+Snowtown Hospital and Health Service,SA,F494,Facility,AIHW,AIHW0760,Yorke and Northern Local Health Network
+Southern Yorke Peninsula Health Service (Yorketown),SA,F495,Facility,AIHW,AIHW0772,Yorke and Northern Local Health Network
+Snowtown Hospital,SA,F496,Facility,AIHW,AIHW0612,Yorke and Northern Local Health Network
+TAS,TAS,S497,State,,,
+Tasmanian Health Service,TAS,L498,LHN,,,
+Deloraine District Hospital,TAS,F499,Facility,AIHW,AIHW0235,Tasmanian Health Service
+Royal Hobart Hospital,TAS,F500,Facility,AIHW,AIHW0731,Tasmanian Health Service
+Launceston General Hospital,TAS,F501,Facility,AIHW,AIHW0463,Tasmanian Health Service
+Beaconsfield District Health Service,TAS,F502,Facility,AIHW,AIHW0057,Tasmanian Health Service
+Campbell Town Multi Purpose Service,TAS,F503,Facility,AIHW,AIHW0149,Tasmanian Health Service
+King Island Multi Purpose Centre,TAS,F504,Facility,AIHW,AIHW0437,Tasmanian Health Service
+Toosey Memorial Hospital (Longford),TAS,F505,Facility,AIHW,AIHW0901,Tasmanian Health Service
+New Norfolk District Hospital,TAS,F506,Facility,AIHW,AIHW0611,Tasmanian Health Service
+HealthWest (West Coast District Hospital at Queenstown),TAS,F507,Facility,AIHW,AIHW0362,Tasmanian Health Service
+St Marys Community Health Centre,TAS,F508,Facility,AIHW,AIHW0808,Tasmanian Health Service
+North East Soldiers' Memorial Hospital and Community Service Centre (Scottsdale Hospital),TAS,F509,Facility,AIHW,AIHW0620,Tasmanian Health Service
+Smithton District Hospital,TAS,F510,Facility,AIHW,AIHW0759,Tasmanian Health Service
+Flinders Island Multi Purpose Centre,TAS,F511,Facility,AIHW,AIHW0296,Tasmanian Health Service
+North West Regional Hospital,TAS,F512,Facility,AIHW,AIHW0627,Tasmanian Health Service
+St Helens District Hospital,TAS,F513,Facility,AIHW,AIHW0787,Tasmanian Health Service
+George Town Hospital and Community Health Centre,TAS,F514,Facility,AIHW,AIHW0309,Tasmanian Health Service
+Esperance Multi Purpose Centre,TAS,F515,Facility,AIHW,AIHW0284,Tasmanian Health Service
+Mersey Community Hospital,TAS,F516,Facility,AIHW,AIHW0543,Tasmanian Health Service
+Midlands Multi Purpose Centre,TAS,F517,Facility,AIHW,AIHW0546,Tasmanian Health Service
+May Shaw District Nursing Centre,TAS,F518,Facility,AIHW,AIHW0528,Tasmanian Health Service
+Tasman Health and Community Service,TAS,F519,Facility,AIHW,AIHW0852,Tasmanian Health Service
+Huon Eldercare,TAS,F520,Facility,AIHW,AIHW0390,Tasmanian Health Service
+Alcohol And Drug Services,TAS,F521,Facility,,,TBC
+Deloraine District Hospital,TAS,F522,Facility,,,TBC
+VIC,VIC,S523,State,,,
+Albury Wodonga Health,VIC,L524,LHN,,,
+Albury Wodonga Health [Wodonga Campus],VIC,F525,Facility,AIHW,AIHW0010,Albury Wodonga Health
+Alexandra District Hospital,VIC,L526,LHN,,,
+Alexandra District Hospital,VIC,F527,Facility,AIHW,AIHW0012,Alexandra District Hospital
+Alfred Health,VIC,L528,LHN,,,
+The Alfred,VIC,F529,Facility,AIHW,AIHW0858,Alfred Health
+Sandringham Hospital,VIC,F530,Facility,AIHW,AIHW0748,Alfred Health
+Caulfield Hospital,VIC,F531,Facility,AIHW,AIHW0165,Alfred Health
+Alpine Health,VIC,L532,LHN,,,
+Alpine Health [Myrtleford],VIC,F533,Facility,AIHW,AIHW0018,Alpine Health
+Alpine Health [Mount Beauty],VIC,F534,Facility,AIHW,AIHW0017,Alpine Health
+Alpine Health [Bright],VIC,F535,Facility,AIHW,AIHW0016,Alpine Health
+Austin Health,VIC,L536,LHN,,,
+Austin Hospital [Heidelberg],VIC,F537,Facility,AIHW,AIHW0030,Austin Health
+Royal Talbot Rehabilitation Centre [Kew],VIC,F538,Facility,AIHW,AIHW0740,Austin Health
+Heidelberg Repatriation Hospital [Heidelberg West],VIC,F539,Facility,AIHW,AIHW0366,Austin Health
+Bairnsdale Regional Health Service,VIC,L540,LHN,,,
+Bairnsdale Regional Health Service,VIC,F541,Facility,AIHW,AIHW0034,Bairnsdale Regional Health Service
+Barwon Health,VIC,L542,LHN,,,
+University Hospital Geelong,VIC,F543,Facility,AIHW,AIHW0919,Barwon Health
+The McKellar Centre,VIC,F544,Facility,AIHW,AIHW0872,Barwon Health
+Barwon Health - Camhs,VIC,F545,Facility,,,Barwon Health
+Barwon Health - South Geelong Renal Unit Campus,VIC,F546,Facility,,,Barwon Health
+Barwon Health - Ashley Manor Campus,VIC,F547,Facility,,,Barwon Health
+Barwon Health - Newcomb Renal Unit Campus,VIC,F548,Facility,,,Barwon Health
+Barwon Health North,VIC,F549,Facility,,,Barwon Health
+Colac Area Health,VIC,F550,Facility,AIHW,AIHW0192,Barwon Health
+Bass Coast Regional Health,VIC,L551,LHN,,,
+Bass Coast Regional Health,VIC,F552,Facility,AIHW,AIHW0052,Bass Coast Regional Health
+Beaufort and Skipton Health Service,VIC,L553,LHN,,,
+Beaufort & Skipton Health Service [Beaufort],VIC,F554,Facility,AIHW,AIHW0059,Beaufort and Skipton Health Service
+Beaufort & Skipton Health Service [Skipton],VIC,F555,Facility,AIHW,AIHW0060,Beaufort and Skipton Health Service
+Beechworth Health Service,VIC,L556,LHN,,,
+Beechworth Health Service,VIC,F557,Facility,AIHW,AIHW0061,Beechworth Health Service
+Benalla and District Memorial Hospital,VIC,L558,LHN,,,
+Benalla & District Memorial Hospital,VIC,F559,Facility,AIHW,AIHW0067,Benalla and District Memorial Hospital
+Bendigo Health Care Group,VIC,L560,LHN,,,
+Bendigo Health Care Group [Anne Caudle],VIC,F561,Facility,AIHW,AIHW0068,Bendigo Health Care Group
+The Bendigo Hospital,VIC,F562,Facility,AIHW,AIHW0861,Bendigo Health Care Group
+Boort District Health,VIC,L563,LHN,,,
+Boort District Health,VIC,F564,Facility,AIHW,AIHW0090,Boort District Health
+Calvary Health Care Bethlehem Limited,VIC,L565,LHN,,,
+Calvary Health Care Bethlehem,VIC,F566,Facility,AIHW,AIHW0134,Calvary Health Care Bethlehem Limited
+Casterton Memorial Hospital,VIC,L567,LHN,,,
+Casterton Memorial Hospital,VIC,F568,Facility,AIHW,AIHW0161,Casterton Memorial Hospital
+Central Gippsland Health Service,VIC,L569,LHN,,,
+Central Gippsland Health Service [Sale],VIC,F570,Facility,AIHW,AIHW0169,Central Gippsland Health Service
+Central Gippsland Health Service [Maffra],VIC,F571,Facility,AIHW,AIHW0168,Central Gippsland Health Service
+NCN Health,VIC,L572,LHN,,,
+Cobram District Hospital,VIC,F573,Facility,AIHW,AIHW0188,NCN Health
+Nathalia District Hospital,VIC,F574,Facility,,,
+Numurkah & District Health Service,VIC,F575,Facility,,,
+Cohuna District Hospital,VIC,L576,LHN,,,
+Cohuna District Hospital,VIC,F577,Facility,AIHW,AIHW0191,Cohuna District Hospital
+East Grampians Health Service,VIC,L578,LHN,,,
+East Grampians Health Service [Ararat],VIC,F579,Facility,AIHW,AIHW0257,East Grampians Health Service
+East Grampians Health Service [Willaura],VIC,F580,Facility,AIHW,AIHW0258,East Grampians Health Service
+East Wimmera Health Service,VIC,L581,LHN,,,
+East Wimmera Health Service [Donald],VIC,F582,Facility,AIHW,AIHW0261,East Wimmera Health Service
+East Wimmera Health Service [Wycheproof],VIC,F583,Facility,AIHW,AIHW0263,East Wimmera Health Service
+East Wimmera Health Service [Charlton],VIC,F584,Facility,AIHW,AIHW0260,East Wimmera Health Service
+East Wimmera Health Service [Birchip],VIC,F585,Facility,AIHW,AIHW0259,East Wimmera Health Service
+East Wimmera Health Service [St Arnaud],VIC,F586,Facility,AIHW,AIHW0262,East Wimmera Health Service
+Eastern Health,VIC,L587,LHN,,,
+Box Hill Hospital,VIC,F588,Facility,AIHW,AIHW0096,Eastern Health
+Healesville Hospital and Yarra Valley Health,VIC,F589,Facility,AIHW,AIHW0360,Eastern Health
+Angliss Hospital,VIC,F590,Facility,AIHW,AIHW0020,Eastern Health
+Maroondah Hospital [East Ringwood],VIC,F591,Facility,AIHW,AIHW0508,Eastern Health
+The Peter James Centre [East Burwood],VIC,F592,Facility,AIHW,AIHW0878,Eastern Health
+Yarra Ranges Health,VIC,F593,Facility,AIHW,AIHW1005,Eastern Health
+Wantirna Health,VIC,F594,Facility,AIHW,AIHW0944,Eastern Health
+Echuca Regional Health,VIC,L595,LHN,,,
+Echuca Regional Health,VIC,F596,Facility,AIHW,AIHW0265,Echuca Regional Health
+Grampians Health,VIC,L597,LHN,,,
+Ballarat Health Services [Base Campus],VIC,F598,Facility,AIHW,AIHW0037,Ballarat Health Services
+Ballarat Health Services [Queen Elizabeth Campus],VIC,F599,Facility,AIHW,AIHW0038,Ballarat Health Services
+Dimboola District Hospital,VIC,F600,Facility,AIHW,AIHW0242,Grampians Health
+Wimmera Base Hospital [Horsham],VIC,F601,Facility,AIHW,AIHW0986,Grampians Health
+Stawell Regional Health,VIC,F602,Facility,AIHW,AIHW0821,Grampians Health
+Edenhope and District Memorial Hospital,VIC,F603,Facility,AIHW,AIHW0266,Grampians Health
+Gippsland Southern Health Service,VIC,L604,LHN,,,
+Gippsland Southern Health Service - Korumburra,VIC,F605,Facility,AIHW,AIHW0313,Gippsland Southern Health Service
+Gippsland Southern Health Service - Leongatha,VIC,F606,Facility,AIHW,AIHW0314,Gippsland Southern Health Service
+Goulburn Valley Health,VIC,L607,LHN,,,
+Goulburn Valley Health [Shepparton],VIC,F608,Facility,AIHW,AIHW0333,Goulburn Valley Health
+Goulburn Valley Health [Tatura],VIC,F609,Facility,AIHW,AIHW0334,Goulburn Valley Health
+Goulburn Valley Health [Waranga],VIC,F610,Facility,AIHW,AIHW0335,Goulburn Valley Health
+Heathcote Health,VIC,L611,LHN,,,
+Heathcote Health,VIC,F612,Facility,AIHW,AIHW0363,Heathcote Health
+Central Highlands Rural Health,VIC,L613,LHN,,,
+Creswick District Hospital,VIC,F614,Facility,AIHW,AIHW0217,Hepburn Health Service
+Daylesford District Hospital,VIC,F615,Facility,AIHW,AIHW0232,Hepburn Health Service
+Hesse Rural Health Service (Winchelsea),VIC,L616,LHN,,,
+Hesse Rural Health Service [Winchelsea],VIC,F617,Facility,AIHW,AIHW0371,Hesse Rural Health Service (Winchelsea)
+Heywood Rural Health,VIC,L618,LHN,,,
+Heywood Rural Health,VIC,F619,Facility,AIHW,AIHW0372,Heywood Rural Health
+Inglewood & District Health Service,VIC,F620,Facility,AIHW,AIHW0394,Inglewood and District Health Service
+Kerang District Health,VIC,L621,LHN,,,
+Kerang District Health,VIC,F622,Facility,AIHW,AIHW0432,Kerang District Health
+Kooweerup Regional Health Service,VIC,L623,LHN,,,
+Kooweerup Regional Health Service,VIC,F624,Facility,AIHW,AIHW0446,Kooweerup Regional Health Service
+Kyabram and District Health Service,VIC,L625,LHN,,,
+Kyabram & District Health Service,VIC,F626,Facility,AIHW,AIHW0450,Kyabram and District Health Service
+Kyneton District Health Service,VIC,L627,LHN,,,
+Kyneton District Health Service,VIC,F628,Facility,AIHW,AIHW0451,Kyneton District Health Service
+Latrobe Regional Hospital,VIC,L629,LHN,,,
+Latrobe Regional Hospital [Traralgon],VIC,F630,Facility,AIHW,AIHW0462,Latrobe Regional Hospital
+Central Gippsland Health Service (Heyfield),VIC,F631,Facility,,,Latrobe Regional Hospital
+Lorne Community Hospital,VIC,L632,LHN,,,
+Lorne Community Hospital,VIC,F633,Facility,AIHW,AIHW0482,Lorne Community Hospital
+Dhelkaya Health,VIC,L634,LHN,,,
+Castlemaine Health,VIC,F635,Facility,AIHW,AIHW0495,Dhelkaya Health
+Maldon Hospital,VIC,F636,Facility,AIHW,AIHW0495,Dhelkaya Health
+Mallee Track Health and Community Service,VIC,L637,LHN,,,
+Mallee Track Health & Community Service [Ouyen],VIC,F638,Facility,AIHW,AIHW0497,Mallee Track Health and Community Service
+Mallee Track Health & Community Service [Sea Lake],VIC,F639,Facility,AIHW,AIHW0498,Mallee Track Health and Community Service
+Mansfield District Hospital,VIC,L640,LHN,,,
+Mansfield District Hospital,VIC,F641,Facility,AIHW,AIHW0505,Mansfield District Hospital
+Maryborough District Health Service,VIC,L642,LHN,,,
+Maryborough District Health Service [Dunolly],VIC,F643,Facility,AIHW,AIHW0509,Maryborough District Health Service
+Maryborough District Health Service [Maryborough],VIC,F644,Facility,AIHW,AIHW0510,Maryborough District Health Service
+Melbourne Health,VIC,L645,LHN,,,
+Royal Melbourne Hospital [Parkville],VIC,F646,Facility,AIHW,AIHW0733,Melbourne Health
+Royal Melbourne Hospital- Royal Park Campus,VIC,F647,Facility,AIHW,AIHW0734,Melbourne Health
+Orygen Inpatient Unit,VIC,F648,Facility,AIHW,AIHW0651,Melbourne Health
+Mercy Public Hospital Inc.,VIC,L649,LHN,,,
+Mercy Health - O'Connell Family Centre,VIC,F650,Facility,AIHW,AIHW0539,Mercy Public Hospital Inc.
+Mercy Hospital for Women,VIC,F651,Facility,AIHW,AIHW0540,Mercy Public Hospital Inc.
+Werribee Mercy Hospital,VIC,F652,Facility,AIHW,AIHW0960,Mercy Public Hospital Inc.
+Ursula Frayne Centre,VIC,F653,Facility,AIHW,AIHW0923,Mercy Public Hospital Inc.
+Werribee Mercy Mental Health Program,VIC,F654,Facility,,,Mercy Public Hospital Inc.
+Mildura Base Hospital,VIC,L655,LHN,,,
+Mildura Base Hospital,VIC,F656,Facility,AIHW,AIHW0547,Mildura Base Hospital
+Moyne Health Services (Port Fairy),VIC,L657,LHN,,,
+Moyne Health Services [Port Fairy],VIC,F658,Facility,AIHW,AIHW0582,Moyne Health Services (Port Fairy)
+Northeast Health Wangaratta,VIC,L659,LHN,,,
+Northeast Health Wangaratta,VIC,F660,Facility,AIHW,AIHW0630,Northeast Health Wangaratta
+Northern Health,VIC,L661,LHN,,,
+The Kilmore & District Hospital,VIC,F662,Facility,AIHW,AIHW0871,Northern Health
+The Northern Hospital [Epping],VIC,F663,Facility,AIHW,AIHW0876,Northern Health
+Bundoora Extended Care Centre,VIC,F664,Facility,AIHW,AIHW0116,Northern Health
+Broadmeadows Health Service,VIC,F665,Facility,AIHW,AIHW0106,Northern Health
+Craigieburn Health Service,VIC,F666,Facility,AIHW,AIHW0215,Northern Health
+Tweddle Child & Family Health Centre,VIC,L667,LHN,,,
+Tweddle Child & Family Health Centre [Footscray],VIC,F668,Facility,AIHW,AIHW0916,Not stated/inadequately described
+Omeo District Health,VIC,L669,LHN,,,
+Omeo District Health,VIC,F670,Facility,AIHW,AIHW0644,Omeo District Health
+Orbost Regional Health,VIC,L671,LHN,,,
+Orbost Regional Health,VIC,F672,Facility,AIHW,AIHW0648,Orbost Regional Health
+Great Ocean Road Health,VIC,L673,LHN,,,
+Otway Health & Community Services [Apollo Bay],VIC,F674,Facility,AIHW,AIHW0653,Great Ocean Road Health
+Peninsula Health,VIC,L675,LHN,,,
+Rosebud Hospital,VIC,F676,Facility,AIHW,AIHW0724,Peninsula Health
+Frankston Hospital,VIC,F677,Facility,AIHW,AIHW0301,Peninsula Health
+Golf Links Road Rehabilitation Centre,VIC,F678,Facility,AIHW,AIHW0326,Peninsula Health
+The Mornington Centre,VIC,F679,Facility,AIHW,AIHW0875,Peninsula Health
+Frankston Public Surgical Centre,VIC,F680,Facility,,,Peninsula Health
+Mount Eliza Centre,VIC,F681,Facility,,,Peninsula Health
+Peter MacCallum Cancer Institute,VIC,L682,LHN,,,
+Peter MacCallum Cancer Centre,VIC,F683,Facility,AIHW,AIHW0671,Peter MacCallum Cancer Institute
+Portland District Health,VIC,L684,LHN,,,
+Portland District Health,VIC,F685,Facility,AIHW,AIHW0686,Portland District Health
+Robinvale District Health Services,VIC,L686,LHN,,,
+Manangatang & District Hospital,VIC,F687,Facility,AIHW,AIHW0500,Robinvale District Health Services
+Robinvale District Health Services,VIC,F688,Facility,AIHW,AIHW0718,Robinvale District Health Services
+Rochester and Elmore District Health Service,VIC,L689,LHN,,,
+Rochester & Elmore District Health Service,VIC,F690,Facility,AIHW,AIHW0719,Rochester and Elmore District Health Service
+Royal Children's Hospital,VIC,L691,LHN,,,
+Royal Children's Hospital [Parkville],VIC,F692,Facility,AIHW,AIHW0729,Royal Children's Hospital
+Royal Victorian Eye and Ear Hospital,VIC,L693,LHN,,,
+The Royal Victorian Eye & Ear Hospital,VIC,F694,Facility,AIHW,AIHW0881,Royal Victorian Eye and Ear Hospital
+Royal Women's Hospital,VIC,L695,LHN,,,
+Royal Women's Hospital [Parkville],VIC,F696,Facility,AIHW,AIHW0741,Royal Women's Hospital
+Women's at Sandringham,VIC,F697,Facility,AIHW,AIHW0995,Royal Women's Hospital
+Rural Northwest Health,VIC,L698,LHN,,,
+Rural Northwest Health [Warracknabeal],VIC,F699,Facility,AIHW,AIHW0743,Rural Northwest Health
+Rural Northwest Health [Hopetoun],VIC,F700,Facility,AIHW,AIHW0742,Rural Northwest Health
+Seymour District Memorial Hospital,VIC,L701,LHN,,,
+Seymour District Memorial Hospital,VIC,F702,Facility,AIHW,AIHW0752,Seymour District Memorial Hospital
+South Gippsland Hospital,VIC,L703,LHN,,,
+South Gippsland Hospital [Foster],VIC,F704,Facility,AIHW,AIHW0765,South Gippsland Hospital (Foster)
+South West Healthcare,VIC,L705,LHN,,,
+South West Healthcare [Camperdown],VIC,F706,Facility,AIHW,AIHW0768,South West Healthcare
+South West Healthcare [Warrnambool],VIC,F707,Facility,AIHW,AIHW0769,South West Healthcare
+St Vincent's Health Australia,VIC,L708,LHN,,,
+Caritas Christi Hospice [Kew],VIC,F709,Facility,AIHW,AIHW0157,St Vincent's Health Australia
+St George's Health Service- Aged Care,VIC,F710,Facility,AIHW,AIHW0786,St Vincent's Health Australia
+St Vincent's Hospital [Fitzroy],VIC,F711,Facility,AIHW,AIHW0811,St Vincent's Health Australia
+Swan Hill District Health,VIC,L712,LHN,,,
+Swan Hill District Health [Swan Hill],VIC,F713,Facility,AIHW,AIHW0838,Swan Hill District Health
+Swan Hill District Health [Nyah],VIC,F714,Facility,AIHW,AIHW0837,Swan Hill District Health
+Tallangatta Health Service,VIC,L715,LHN,,,
+Tallangatta Health Service,VIC,F716,Facility,AIHW,AIHW0846,Tallangatta Health Service
+Terang and Mortlake Health Service (Terang),VIC,L717,LHN,,,
+Terang & Mortlake Health Service [Terang],VIC,F718,Facility,AIHW,AIHW0856,Terang and Mortlake Health Service (Terang)
+Timboon and District Healthcare Service,VIC,L719,LHN,,,
+Timboon & District Healthcare Service,VIC,F720,Facility,AIHW,AIHW0896,Timboon and District Healthcare Service
+Dental Health Services Victoria,VIC,L721,LHN,,,
+Dental Health Services Victoria,VIC,F722,Facility,AIHW,AIHW0239,Dental Health Services Victoria
+Forensicare,VIC,L723,LHN,,,
+Dame Phyllis Frost Centre - Marmak unit,VIC,F724,Facility,AIHW,AIHW0228,Forensicare
+Victorian Institute of Forensic Mental Health,VIC,F725,Facility,AIHW,AIHW0926,Victorian Institute of Forensic Mental Health
+Victorian Institute of Forensic Mental Health Prison Health Service,VIC,F726,Facility,AIHW,AIHW0927,Victorian Institute of Forensic Mental Health
+Upper Murray Health and Community Services (Corryong),VIC,L727,LHN,,,
+Upper Murray Health & Community Services [Corryong],VIC,F728,Facility,AIHW,AIHW0920,Upper Murray Health and Community Services (Corryong)
+Queen Elizabeth Centre,VIC,L729,LHN,,,
+Queen Elizabeth Centre [Noble Park],VIC,F730,Facility,AIHW,AIHW0696,Queen Elizabeth Centre
+West Gippsland Healthcare Group,VIC,L731,LHN,,,
+West Gippsland Healthcare Group [Warragul],VIC,F732,Facility,AIHW,AIHW0964,West Gippsland Healthcare Group
+West Wimmera Health Service,VIC,L733,LHN,,,
+West Wimmera Health Service [Jeparit],VIC,F734,Facility,AIHW,AIHW0965,West Wimmera Health Service
+West Wimmera Health Service [Rupanyup],VIC,F735,Facility,AIHW,AIHW0969,West Wimmera Health Service
+West Wimmera Health Service [Kaniva],VIC,F736,Facility,AIHW,AIHW0966,West Wimmera Health Service
+West Wimmera Health Service [Nhill],VIC,F737,Facility,AIHW,AIHW0967,West Wimmera Health Service
+West Wimmera Health Service [Rainbow],VIC,F738,Facility,AIHW,AIHW0968,West Wimmera Health Service
+Western District Health Service,VIC,L739,LHN,,,
+Western District Health Service [Coleraine District Health Service],VIC,F740,Facility,AIHW,AIHW0970,Western District Health Service
+Western District Health Service [Hamilton],VIC,F741,Facility,AIHW,AIHW0971,Western District Health Service
+Western District Health Service [Penshurst],VIC,F742,Facility,AIHW,AIHW0972,Western District Health Service
+Western Health,VIC,L743,LHN,,,
+Djerriwarrh Health Service [Bacchus Marsh],VIC,F744,Facility,AIHW,AIHW0244,Western Health
+Melton Health,VIC,F745,Facility,AIHW,AIHW0534,Western Health
+Williamstown Hospital,VIC,F746,Facility,AIHW,AIHW0984,Western Health
+Western Hospital [Footscray],VIC,F747,Facility,AIHW,AIHW0975,Western Health
+Sunshine Hospital,VIC,F748,Facility,AIHW,AIHW0833,Western Health
+Sunbury Day Hospital,VIC,F749,Facility,AIHW,AIHW0827,Western Health
+Yarram and District Health Service,VIC,L750,LHN,,,
+Yarram & District Health Service,VIC,F751,Facility,AIHW,AIHW1006,Yarram and District Health Service
+Yarrawonga District Health Service,VIC,L752,LHN,,,
+Yarrawonga District Health Service,VIC,F753,Facility,AIHW,AIHW1007,Yarrawonga District Health Service
+Yea and District Memorial Hospital,VIC,L754,LHN,,,
+Yea & District Memorial Hospital,VIC,F755,Facility,AIHW,AIHW1009,Yea and District Memorial Hospital
+Eastern Health,VIC,L756,LHN,,,
+Eastern Health Blackburn Public Surgical Centre,VIC,F757,Facility,,,Eastern Health
+Goulburn Valley Health,VIC,L758,LHN,,,
+Goulburn Valley Health - Centre For Older Persons,VIC,F759,Facility,,,Goulburn Valley Health
+Monash Health,VIC,L760,LHN,,,
+Dandenong Campus,VIC,F761,Facility,AIHW,AIHW0229,Monash Health
+Monash Medical Centre [Clayton],VIC,F762,Facility,AIHW,AIHW0560,Monash Health
+Monash Medical Centre [Moorabbin],VIC,F763,Facility,AIHW,AIHW0561,Monash Health
+Casey Hospital,VIC,F764,Facility,AIHW,AIHW0159,Monash Health
+Cranbourne Integrated Care Centre,VIC,F765,Facility,AIHW,AIHW0216,Monash Health
+Kingston Centre [Cheltenham],VIC,F766,Facility,AIHW,AIHW0439,Monash Health
+Pakenham Health Centre,VIC,F767,Facility,,,Monash Health
+Victorian Heart Hospital,VIC,F768,Facility,,,Monash Health
+Monash Health Community,VIC,F769,Facility,,,Monash Health
+Casey Early Parenting Centre,VIC,F770,Facility,,,Monash Health
+WA,WA,S771,State,,,
+Child Adolescent Health Service,WA,L772,LHN,,,
+Perth Children’s Hospital,WA,F773,Facility,AIHW,AIHW0669,Child Adolescent Health Service
+East Metropolitan Health Service,WA,L774,LHN,,,
+Royal Perth Hospital Wellington Street Campus,WA,F775,Facility,AIHW,AIHW0736,East Metropolitan Health Service
+Armadale-Kelmscott Memorial Hospital,WA,F776,Facility,AIHW,AIHW0021,East Metropolitan Health Service
+Bentley Hospital,WA,F777,Facility,AIHW,AIHW0069,East Metropolitan Health Service
+Kalamunda Hospital,WA,F778,Facility,AIHW,AIHW0417,East Metropolitan Health Service
+St John of God Midland Public Hospital,WA,F779,Facility,AIHW,AIHW0798,East Metropolitan Health Service
+"Next Step Drug And Alcohol Services, East Perth",WA,F780,Facility,AIHW,AIHW0614,East Metropolitan Health Service
+Swan Districts Hospital,WA,F781,Facility,,,East Metropolitan Health Service
+North Metropolitan Health Service,WA,L782,LHN,,,
+Sir Charles Gairdner Hospital,WA,F783,Facility,AIHW,AIHW0758,North Metropolitan Health Service
+King Edward Memorial Hospital for Women,WA,F784,Facility,AIHW,AIHW0436,North Metropolitan Health Service
+Osborne Park Hospital,WA,F785,Facility,AIHW,AIHW0652,North Metropolitan Health Service
+Graylands Selby-Lemnos and Special Care Health Service,WA,F786,Facility,AIHW,AIHW0339,North Metropolitan Health Service
+Joondalup Health Campus (Public),WA,F787,Facility,AIHW,AIHW0411,North Metropolitan Health Service
+Selby Authorised Lodge,WA,F788,Facility,AIHW,AIHW0751,North Metropolitan Health Service
+State Forensic Mental Health Service,WA,F789,Facility,AIHW,AIHW0820,North Metropolitan Health Service
+South Metropolitan Health Service,WA,L790,LHN,,,
+Fremantle Hospital,WA,F791,Facility,AIHW,AIHW0303,South Metropolitan Health Service
+Murray District Hospital,WA,F792,Facility,AIHW,AIHW0589,South Metropolitan Health Service
+Rockingham General Hospital,WA,F793,Facility,AIHW,AIHW0721,South Metropolitan Health Service
+Fiona Stanley Hospital,WA,F794,Facility,AIHW,AIHW0294,South Metropolitan Health Service
+Peel Health Campus,WA,F795,Facility,AIHW,AIHW0662,South Metropolitan Health Service
+Peel Health Campus,WA,F796,Facility,,,South Metropolitan Health Service
+WA Country Health Service,WA,L797,LHN,,,
